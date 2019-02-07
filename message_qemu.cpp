@@ -14,6 +14,15 @@
 #include "tcpsocket.h"
 #include <QDebug>
 #include<QStandardItemModel>
+#include <QTimer>
+
+
+
+#define TIMER_TIMEOUT   (0.35*1000)
+#define STOPTIME (0.1*1000)
+
+int CurrentValue = 0;
+
 
 
 message_qemu::message_qemu(QWidget *parent) :
@@ -88,7 +97,7 @@ message_qemu::message_qemu(QWidget *parent) :
     ui->label->setScaledContents(true);
     ui->label->resize(ui->widget->size());
 
-    QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
+
     QIcon button_ico_off(":/new/icon/pic/icon/com_offline.png");
 
     ui->pushButton->setIcon(button_ico_off);
@@ -147,6 +156,62 @@ message_qemu::message_qemu(QWidget *parent) :
     ui->tableWidget->setItem(6,0,new QTableWidgetItem("硬盘："));
     ui->tableWidget->setItem(7,0,new QTableWidgetItem("屏幕分辨率："));
 
+    ui->tableWidget_2->setEditTriggers(QAbstractItemView::NoEditTriggers);  //禁止编辑
+    ui->tableWidget_2->verticalHeader()->setVisible(true); // 隐藏水平header
+    ui->tableWidget_2->setItem(0,0,new QTableWidgetItem("电脑信息："));
+    ui->tableWidget_2->setItem(1,0,new QTableWidgetItem("MAC地址："));
+    ui->tableWidget_2->setItem(2,0,new QTableWidgetItem("IP地址："));
+    ui->tableWidget_2->setItem(3,0,new QTableWidgetItem("内存："));
+    ui->tableWidget_2->setItem(4,0,new QTableWidgetItem("CPU："));
+    ui->tableWidget_2->setItem(5,0,new QTableWidgetItem("操作系统："));
+    ui->tableWidget_2->setItem(6,0,new QTableWidgetItem("硬盘："));
+    ui->tableWidget_2->setItem(7,0,new QTableWidgetItem("屏幕分辨率："));
+
+    ui->tableWidget_3->setEditTriggers(QAbstractItemView::NoEditTriggers);  //禁止编辑
+    ui->tableWidget_3->verticalHeader()->setVisible(true); // 隐藏水平header
+    ui->tableWidget_3->setItem(0,0,new QTableWidgetItem("电脑信息："));
+    ui->tableWidget_3->setItem(1,0,new QTableWidgetItem("MAC地址："));
+    ui->tableWidget_3->setItem(2,0,new QTableWidgetItem("IP地址："));
+    ui->tableWidget_3->setItem(3,0,new QTableWidgetItem("内存："));
+    ui->tableWidget_3->setItem(4,0,new QTableWidgetItem("CPU："));
+    ui->tableWidget_3->setItem(5,0,new QTableWidgetItem("操作系统："));
+    ui->tableWidget_3->setItem(6,0,new QTableWidgetItem("硬盘："));
+    ui->tableWidget_3->setItem(7,0,new QTableWidgetItem("屏幕分辨率："));
+
+
+    ui->tableWidget_4->setEditTriggers(QAbstractItemView::NoEditTriggers);  //禁止编辑
+    ui->tableWidget_4->verticalHeader()->setVisible(true); // 隐藏水平header
+    ui->tableWidget_4->setItem(0,0,new QTableWidgetItem("电脑信息："));
+    ui->tableWidget_4->setItem(1,0,new QTableWidgetItem("MAC地址："));
+    ui->tableWidget_4->setItem(2,0,new QTableWidgetItem("IP地址："));
+    ui->tableWidget_4->setItem(3,0,new QTableWidgetItem("内存："));
+    ui->tableWidget_4->setItem(4,0,new QTableWidgetItem("CPU："));
+    ui->tableWidget_4->setItem(5,0,new QTableWidgetItem("操作系统："));
+    ui->tableWidget_4->setItem(6,0,new QTableWidgetItem("硬盘："));
+    ui->tableWidget_4->setItem(7,0,new QTableWidgetItem("屏幕分辨率："));
+
+    ui->tableWidget_5->setEditTriggers(QAbstractItemView::NoEditTriggers);  //禁止编辑
+    ui->tableWidget_5->verticalHeader()->setVisible(true); // 隐藏水平header
+    ui->tableWidget_5->setItem(0,0,new QTableWidgetItem("电脑信息："));
+    ui->tableWidget_5->setItem(1,0,new QTableWidgetItem("MAC地址："));
+    ui->tableWidget_5->setItem(2,0,new QTableWidgetItem("IP地址："));
+    ui->tableWidget_5->setItem(3,0,new QTableWidgetItem("内存："));
+    ui->tableWidget_5->setItem(4,0,new QTableWidgetItem("CPU："));
+    ui->tableWidget_5->setItem(5,0,new QTableWidgetItem("操作系统："));
+    ui->tableWidget_5->setItem(6,0,new QTableWidgetItem("硬盘："));
+    ui->tableWidget_5->setItem(7,0,new QTableWidgetItem("屏幕分辨率："));
+
+
+    ui->tableWidget_6->setEditTriggers(QAbstractItemView::NoEditTriggers);  //禁止编辑
+    ui->tableWidget_6->verticalHeader()->setVisible(true); // 隐藏水平header
+    ui->tableWidget_6->setItem(0,0,new QTableWidgetItem("电脑信息："));
+    ui->tableWidget_6->setItem(1,0,new QTableWidgetItem("MAC地址："));
+    ui->tableWidget_6->setItem(2,0,new QTableWidgetItem("IP地址："));
+    ui->tableWidget_6->setItem(3,0,new QTableWidgetItem("内存："));
+    ui->tableWidget_6->setItem(4,0,new QTableWidgetItem("CPU："));
+    ui->tableWidget_6->setItem(5,0,new QTableWidgetItem("操作系统："));
+    ui->tableWidget_6->setItem(6,0,new QTableWidgetItem("硬盘："));
+    ui->tableWidget_6->setItem(7,0,new QTableWidgetItem("屏幕分辨率："));
 
     this->setAttribute(Qt::WA_DeleteOnClose,1);     //子窗口关闭销毁
     qDebug()<<"构造了video窗口"<<endl;
@@ -162,7 +227,7 @@ message_qemu::~message_qemu()
 //加载背景图
 void message_qemu::paintEvent(QPaintEvent *)
 {
-    QPixmap pixmap = QPixmap(":/new/background/pic/background/background1.jpg").scaled(this->size());
+    QPixmap pixmap = QPixmap(":/new/background/pic/background/background.jpg").scaled(this->size());
     QPainter painter(this);
     painter.drawPixmap(this->rect(), pixmap);
 
@@ -179,10 +244,10 @@ void message_qemu::on_pushButton_clicked()
 void message_qemu::on_pushButton_2_clicked()
 {
 
-   load = new loading(this);
-   load->show();
-   load->move ((msg_x - load->width())/2,(msg_y - load->height())/2);
-   QTimer::singleShot(5000, this, SLOT(load_info()));  // 这里是一个3秒定时器， 且只执行一次。
+//   load = new loading(this);
+//   load->show();
+//   load->move ((msg_x - load->width())/2,(msg_y - load->height())/2);
+//   QTimer::singleShot(5000, this, SLOT(load_info()));  // 这里是一个3秒定时器， 且只执行一次。
 
 }
 
@@ -219,40 +284,134 @@ void message_qemu::OnConnectClientSlot(const int , const QString &strIP ,const q
 void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const QByteArray &strData)
 {
     QString str;
-    QStringList config;
+
+    QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
     str += "IP:";
     str += strIP;
     str += "Data:";
     str += strData;
 
     qDebug() << str;
-    qDebug() << "\n验证啊啊啊" << TcpSocket::list;
+//    qDebug() << "\n验证啊啊啊" << TcpSocket::list;
+
+    qDebug () << "list:"<< TcpSocket::list [1];
     config = TcpSocket::list;
 
+    if(config[1]=="1")
+        {
+        Timer = new QTimer(this);
+        connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout()));
+        Timer->start(TIMER_TIMEOUT);
+        //ui->pushButton->setIcon(button_ico_on);
+        ui->tableWidget->setItem(0,1,new QTableWidgetItem(config[3]));
+        ui->tableWidget->setItem(1,1,new QTableWidgetItem(config[4]));
+        ui->tableWidget->setItem(2,1,new QTableWidgetItem(config[5]));
+        ui->tableWidget->setItem(3,1,new QTableWidgetItem(config[6]));
+        ui->tableWidget->setItem(4,1,new QTableWidgetItem(config[7]));
+        ui->tableWidget->setItem(5,1,new QTableWidgetItem(config[8]));
+        ui->tableWidget->setItem(6,1,new QTableWidgetItem(config[9]));
+        ui->tableWidget->setItem(7,1,new QTableWidgetItem(config[10]));
+        repaint();
+
+        qDebug() <<"aaaaaaa"<< config[1];
+        }
+
+    else if(config[1]=="2")
+        {
+        Timer = new QTimer(this);
+        connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout1()));
+        Timer->start(TIMER_TIMEOUT);
+        ui->tableWidget_2->setItem(0,1,new QTableWidgetItem(config[3]));
+        ui->tableWidget_2->setItem(1,1,new QTableWidgetItem(config[4]));
+        ui->tableWidget_2->setItem(2,1,new QTableWidgetItem(config[5]));
+        ui->tableWidget_2->setItem(3,1,new QTableWidgetItem(config[6]));
+        ui->tableWidget_2->setItem(4,1,new QTableWidgetItem(config[7]));
+        ui->tableWidget_2->setItem(5,1,new QTableWidgetItem(config[8]));
+        ui->tableWidget_2->setItem(6,1,new QTableWidgetItem(config[9]));
+        ui->tableWidget_2->setItem(7,1,new QTableWidgetItem(config[10]));
+        repaint();
+
+        qDebug() <<"bbbbbbbb"<< config[1];
+        }
+    else if(config[1]=="3")
+        {
+        Timer = new QTimer(this);
+        connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout2()));
+        Timer->start(TIMER_TIMEOUT);
+        ui->tableWidget_3->setItem(0,1,new QTableWidgetItem(config[3]));
+        ui->tableWidget_3->setItem(1,1,new QTableWidgetItem(config[4]));
+        ui->tableWidget_3->setItem(2,1,new QTableWidgetItem(config[5]));
+        ui->tableWidget_3->setItem(3,1,new QTableWidgetItem(config[6]));
+        ui->tableWidget_3->setItem(4,1,new QTableWidgetItem(config[7]));
+        ui->tableWidget_3->setItem(5,1,new QTableWidgetItem(config[8]));
+        ui->tableWidget_3->setItem(6,1,new QTableWidgetItem(config[9]));
+        ui->tableWidget_3->setItem(7,1,new QTableWidgetItem(config[10]));
+        repaint();
+
+        qDebug() <<"cccc"<< config[1];
+        }
+    else if(config[1]=="4")
+        {
+        Timer = new QTimer(this);
+        connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout3()));
+        Timer->start(TIMER_TIMEOUT);
+        ui->tableWidget_4->setItem(0,1,new QTableWidgetItem(config[3]));
+        ui->tableWidget_4->setItem(1,1,new QTableWidgetItem(config[4]));
+        ui->tableWidget_4->setItem(2,1,new QTableWidgetItem(config[5]));
+        ui->tableWidget_4->setItem(3,1,new QTableWidgetItem(config[6]));
+        ui->tableWidget_4->setItem(4,1,new QTableWidgetItem(config[7]));
+        ui->tableWidget_4->setItem(5,1,new QTableWidgetItem(config[8]));
+        ui->tableWidget_4->setItem(6,1,new QTableWidgetItem(config[9]));
+        ui->tableWidget_4->setItem(7,1,new QTableWidgetItem(config[10]));
+        repaint();
+
+        qDebug() <<"ddd"<< config[1];
+        }
+    else if(config[1]=="5")
+        {
+        Timer = new QTimer(this);
+        connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout4()));
+        Timer->start(TIMER_TIMEOUT);
+        ui->tableWidget_5->setItem(0,1,new QTableWidgetItem(config[3]));
+        ui->tableWidget_5->setItem(1,1,new QTableWidgetItem(config[4]));
+        ui->tableWidget_5->setItem(2,1,new QTableWidgetItem(config[5]));
+        ui->tableWidget_5->setItem(3,1,new QTableWidgetItem(config[6]));
+        ui->tableWidget_5->setItem(4,1,new QTableWidgetItem(config[7]));
+        ui->tableWidget_5->setItem(5,1,new QTableWidgetItem(config[8]));
+        ui->tableWidget_5->setItem(6,1,new QTableWidgetItem(config[9]));
+        ui->tableWidget_5->setItem(7,1,new QTableWidgetItem(config[10]));
+        repaint();
+
+        qDebug() <<"eeee"<< config[1];
+        }
+    else if(config[1]=="6")
+        {
+        Timer = new QTimer(this);
+        connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout5()));
+        Timer->start(TIMER_TIMEOUT);
 
 
-//    QStandardItemModel *model = new QStandardItemModel();
-//    ui->tableView->setModel(model);
-//    for(int i = 0; i < 8; i++)
-//     {
-//         model->setItem(i,0,new QStandardItem("2009441676"));
-//            //设置字符颜色
-//         model->item(i,0)->setForeground(QBrush(QColor(255, 0, 0)));
-//            //设置字符位置
-//         model->item(i,0)->setTextAlignment(Qt::AlignCenter);
-//         model->setItem(i,1,new QStandardItem(QString::fromLocal8Bit("哈哈")));
-//     }
 
-    ui->tableWidget->setItem(0,1,new QTableWidgetItem(config[3]));
-    ui->tableWidget->setItem(1,1,new QTableWidgetItem(config[4]));
-    ui->tableWidget->setItem(2,1,new QTableWidgetItem(config[5]));
-    ui->tableWidget->setItem(3,1,new QTableWidgetItem(config[6]));
-    ui->tableWidget->setItem(4,1,new QTableWidgetItem(config[7]));
-    ui->tableWidget->setItem(5,1,new QTableWidgetItem(config[8]));
-    ui->tableWidget->setItem(6,1,new QTableWidgetItem(config[9]));
-    ui->tableWidget->setItem(7,1,new QTableWidgetItem(config[10]));
+        ui->tableWidget_6->setItem(0,1,new QTableWidgetItem(config[3]));
+        ui->tableWidget_6->setItem(1,1,new QTableWidgetItem(config[4]));
+        ui->tableWidget_6->setItem(2,1,new QTableWidgetItem(config[5]));
+        ui->tableWidget_6->setItem(3,1,new QTableWidgetItem(config[6]));
+        ui->tableWidget_6->setItem(4,1,new QTableWidgetItem(config[7]));
+        ui->tableWidget_6->setItem(5,1,new QTableWidgetItem(config[8]));
+        ui->tableWidget_6->setItem(6,1,new QTableWidgetItem(config[9]));
+        ui->tableWidget_6->setItem(7,1,new QTableWidgetItem(config[10]));
+        repaint();
 
-    repaint();
+        qDebug() <<"ffffff"<< config[1];
+        }
+
+
+
+
+
+    //    qDebug() << config;
+
+
     ui->textBrowser->append(str);
 
 }
@@ -270,4 +429,135 @@ void message_qemu::OnsockDisConnectSlot(int ,QString strIP ,quint16)
 void message_qemu::on_pushButton_6_clicked()
 {
     void update();
+}
+
+
+
+void message_qemu::handleTimeout()
+{
+    QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
+    QIcon button_ico_off(":/new/icon/pic/icon/com_offline.png");
+    CurrentValue++;
+    if(CurrentValue == 13)
+     {
+        ui->pushButton->setIcon(button_ico_on);
+        CurrentValue = 0 ;
+        Timer->stop();
+     }
+
+    else if (CurrentValue%3==0 ){
+        ui->pushButton->setIcon(button_ico_off);
+    }
+    else if (CurrentValue%3 ==1 ){
+        ui->pushButton->setIcon(button_ico_on);
+    }
+    else if (CurrentValue%3 ==2 ){
+         ui->pushButton->setIcon(button_ico_on);
+    }
+}
+
+void message_qemu::handleTimeout1()
+{
+    QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
+    QIcon button_ico_off(":/new/icon/pic/icon/com_offline.png");
+    CurrentValue++;
+    if(CurrentValue == 13)
+     {
+        ui->pushButton_2->setIcon(button_ico_on);
+        CurrentValue = 0 ;
+        Timer->stop();
+     }
+    else if (CurrentValue%3==0 ){
+        ui->pushButton_2->setIcon(button_ico_off);
+    }
+    else if (CurrentValue%3 ==1 ){
+        ui->pushButton_2->setIcon(button_ico_on);
+    }
+    else if (CurrentValue%3 ==2 ){
+         ui->pushButton_2->setIcon(button_ico_on);
+    }
+}
+void message_qemu::handleTimeout2()
+{
+    QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
+    QIcon button_ico_off(":/new/icon/pic/icon/com_offline.png");
+    CurrentValue++;
+    if(CurrentValue == 13)
+     {
+       Timer->stop();
+       CurrentValue = 0 ;
+       ui->pushButton_3->setIcon(button_ico_on);
+     }
+    else if (CurrentValue%3==0 ){
+        ui->pushButton_3->setIcon(button_ico_off);
+    }
+    else if (CurrentValue%3 ==1 ){
+        ui->pushButton_3->setIcon(button_ico_on);
+    }
+    else if (CurrentValue%3 ==2 ){
+         ui->pushButton_3->setIcon(button_ico_on);
+    }
+}
+void message_qemu::handleTimeout3()
+{
+    QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
+    QIcon button_ico_off(":/new/icon/pic/icon/com_offline.png");
+    CurrentValue++;
+    if(CurrentValue == 13)
+     {
+       Timer->stop();
+       CurrentValue = 0 ;
+       ui->pushButton_6->setIcon(button_ico_on);
+     }
+    else if (CurrentValue%3==0 ){
+        ui->pushButton_6->setIcon(button_ico_off);
+    }
+    else if (CurrentValue%3 ==1 ){
+        ui->pushButton_6->setIcon(button_ico_on);
+    }
+    else if (CurrentValue%3 ==2 ){
+         ui->pushButton_6->setIcon(button_ico_on);
+    }
+}
+void message_qemu::handleTimeout4()
+{
+    QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
+    QIcon button_ico_off(":/new/icon/pic/icon/com_offline.png");
+    CurrentValue++;
+    if(CurrentValue == 13)
+     {
+       Timer->stop();
+       CurrentValue = 0 ;
+       ui->pushButton_4->setIcon(button_ico_on);
+     }
+    else if (CurrentValue%3==0 ){
+        ui->pushButton_4->setIcon(button_ico_off);
+    }
+    else if (CurrentValue%3 ==1 ){
+        ui->pushButton_4->setIcon(button_ico_on);
+    }
+    else if (CurrentValue%3 ==2 ){
+         ui->pushButton_4->setIcon(button_ico_on);
+    }
+}
+void message_qemu::handleTimeout5()
+{
+    QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
+    QIcon button_ico_off(":/new/icon/pic/icon/com_offline.png");
+    CurrentValue++;
+    if(CurrentValue == 13)
+     {
+       Timer->stop();
+       CurrentValue = 0 ;
+       ui->pushButton_5->setIcon(button_ico_on);
+     }
+    else if (CurrentValue%3==0 ){
+        ui->pushButton_5->setIcon(button_ico_off);
+    }
+    else if (CurrentValue%3 ==1 ){
+        ui->pushButton_5->setIcon(button_ico_on);
+    }
+    else if (CurrentValue%3 ==2 ){
+         ui->pushButton_5->setIcon(button_ico_on);
+    }
 }

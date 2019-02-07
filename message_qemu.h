@@ -23,20 +23,26 @@ public:
     ~message_qemu();
     void paintEvent(QPaintEvent *);
 
+
     QMovie *movie;
     QMovie *movie_1;
     QMovie *movie_2;
     QMovie *movie_3;
     int msg_x;
     int msg_y;
-
+    QStringList config;
     loading *load;
     test *t1;
 
 
 public slots:
     void load_info();
-
+    void handleTimeout();  //超时处理函数
+    void handleTimeout1();  //超时处理函数
+    void handleTimeout2();  //超时处理函数
+    void handleTimeout3();  //超时处理函数
+    void handleTimeout4();  //超时处理函数
+    void handleTimeout5();  //超时处理函数
 
 private slots:
     void on_pushButton_clicked();
@@ -55,6 +61,8 @@ private:
 
 private:
     Ui::message_qemu *ui;
+    QTimer *Timer;
+
 };
 
 #endif // MESSAGE_QEMU_H

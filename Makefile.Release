@@ -382,7 +382,7 @@ release/moc_widget.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWidg
 		widget.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include widget.h -o release\moc_widget.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include widget.h -o release\moc_widget.cpp
 
 release/moc_message_qemu.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWidget \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qwidget.h \
@@ -517,7 +517,7 @@ release/moc_message_qemu.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets
 		message_qemu.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include message_qemu.h -o release\moc_message_qemu.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include message_qemu.h -o release\moc_message_qemu.cpp
 
 release/moc_login.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWidget \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qwidget.h \
@@ -670,7 +670,7 @@ release/moc_login.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWidge
 		login.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include login.h -o release\moc_login.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include login.h -o release\moc_login.cpp
 
 release/moc_title_bar.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWidget \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qwidget.h \
@@ -778,7 +778,7 @@ release/moc_title_bar.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QW
 		title_bar.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include title_bar.h -o release\moc_title_bar.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include title_bar.h -o release\moc_title_bar.cpp
 
 release/moc_dlgwait.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QDialog \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qdialog.h \
@@ -887,7 +887,7 @@ release/moc_dlgwait.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QDia
 		dlgwait.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include dlgwait.h -o release\moc_dlgwait.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include dlgwait.h -o release\moc_dlgwait.cpp
 
 release/moc_dlgwait_1.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QDialog \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qdialog.h \
@@ -996,7 +996,7 @@ release/moc_dlgwait_1.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QD
 		dlgwait_1.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include dlgwait_1.h -o release\moc_dlgwait_1.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include dlgwait_1.h -o release\moc_dlgwait_1.cpp
 
 release/moc_fitwindow.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/QObject \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/qobject.h \
@@ -1105,7 +1105,7 @@ release/moc_fitwindow.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/QObje
 		fitwindow.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include fitwindow.h -o release\moc_fitwindow.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include fitwindow.h -o release\moc_fitwindow.cpp
 
 release/moc_test.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWidget \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qwidget.h \
@@ -1213,7 +1213,7 @@ release/moc_test.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWidget
 		test.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include test.h -o release\moc_test.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include test.h -o release\moc_test.cpp
 
 release/moc_loading.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWidget \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qwidget.h \
@@ -1321,7 +1321,7 @@ release/moc_loading.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWid
 		loading.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include loading.h -o release\moc_loading.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include loading.h -o release\moc_loading.cpp
 
 release/moc_tcpserver.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork/QTcpServer \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork/qtcpserver.h \
@@ -1414,7 +1414,7 @@ release/moc_tcpserver.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork/QT
 		tcpserver.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include tcpserver.h -o release\moc_tcpserver.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include tcpserver.h -o release\moc_tcpserver.cpp
 
 release/moc_tcpsocket.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork/QTcpSocket \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork/qtcpsocket.h \
@@ -1502,7 +1502,7 @@ release/moc_tcpsocket.cpp: C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork/QT
 		tcpsocket.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/bin/moc.exe
-	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackdemo1/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackdemo1 -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include tcpsocket.h -o release\moc_tcpsocket.cpp
+	C:\Qt\Qt5.12.0\5.12.0\mingw73_64\bin\moc.exe $(DEFINES) --include E:/mod1/hackfinal/release/moc_predefs.h -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++ -IE:/mod1/hackfinal -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include tcpsocket.h -o release\moc_tcpsocket.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -2053,12 +2053,21 @@ release/message_qemu.o: message_qemu.cpp message_qemu.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QCalendarWidget \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qcalendarwidget.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/qdatetime.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QGridLayout \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qboxlayout.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qlabel.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QPushButton \
@@ -2066,6 +2075,15 @@ release/message_qemu.o: message_qemu.cpp message_qemu.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QSpacerItem \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QTabWidget \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QTableWidget \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qtableview.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QTextBrowser \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qtextbrowser.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qtextdocument.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qtextformat.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qmainwindow.h \
@@ -2112,7 +2130,8 @@ release/message_qemu.o: message_qemu.cpp message_qemu.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/QByteArray \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/QFile \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/QTime \
-		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/qdatetime.h
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/QStandardItemModel \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qstandarditemmodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\message_qemu.o message_qemu.cpp
 
 release/login.o: login.cpp login.h \
@@ -3561,7 +3580,33 @@ release/tcpsocket.o: tcpsocket.cpp tcpsocket.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qkeysequence.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qevent.h \
 		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qvector2d.h \
-		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qtouchdevice.h
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qtouchdevice.h \
+		message_qemu.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/QPainter \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QDialog \
+		customtabstyle.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QProxyStyle \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qproxystyle.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QCommonStyle \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qcommonstyle.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qstyle.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/QStyleOptionTab \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qvalidator.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qslider.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qframe.h \
+		loading.h \
+		test.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\tcpsocket.o tcpsocket.cpp
 
 release/threadhandle.o: threadhandle.cpp threadhandle.h \

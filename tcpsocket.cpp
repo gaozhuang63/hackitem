@@ -65,12 +65,7 @@ void TcpSocket::disConTcpSlot(int i)
 
 void TcpSocket::readDataSlot()
 {
-/*    QByteArray RecvData = this->readAll();                                                                            //注释头
-    auto SendData  = handleData(RecvData,this->peerAddress().toString(),this->peerPort());
-
-    qDebug() << "RecvData: " << RecvData;
-    this->write(SendData);
-    emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),RecvData);                            */  //注释尾
+    list.clear();                          //初始化信息列表;
 
 
     QDataStream in(this);
@@ -99,6 +94,9 @@ void TcpSocket::readDataSlot()
                 //nSize = this->bytesAvailable();
                 log_pas.append(this->readAll());       //readAll()是QTcpSocket从QIODevice继承的public function，直接调用就可以读取从服务器发过来的数据了
                 //log.append(this->read(qint64(14)));
+
+
+
                 list=log_pas.split("#");
                 qDebug()<<list ;
                 qDebug() << "账号：" << list[1];
