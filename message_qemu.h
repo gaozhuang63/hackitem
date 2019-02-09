@@ -1,5 +1,6 @@
-#ifndef MESSAGE_QEMU_H
-#define MESSAGE_QEMU_H
+#pragma once                                    //相互包含头文件
+//#ifndef MESSAGE_QEMU_H
+//#define MESSAGE_QEMU_H
 
 #include <QWidget>
 #include <QPainter>
@@ -7,12 +8,25 @@
 #include "customtabstyle.h"
 #include "loading.h"
 #include "test.h"
+#include "tcpserver.h"
+#include "tcpsocket.h"
+#include <QTcpSocket>
+#include <QQueue>
+#include <QFutureWatcher>
+#include <QByteArray>
+#include <QFile>
+#include <QTime>
+
+//=====枚举标志信息类型，分别为登陆、消息、文件==============
+//enum MessageType{Login,Message,FileName,NONE};
 
 
 
 namespace Ui {
 class message_qemu;
 }
+
+
 
 class message_qemu : public QWidget
 {
@@ -33,6 +47,8 @@ public:
     QStringList config;
     loading *load;
     test *t1;
+    qintptr socketDescriptor;
+    int choose;
 
 
 public slots:
@@ -43,6 +59,7 @@ public slots:
     void handleTimeout3();  //超时处理函数
     void handleTimeout4();  //超时处理函数
     void handleTimeout5();  //超时处理函数
+    void passEvent();
 
 private slots:
     void on_pushButton_clicked();
@@ -55,9 +72,11 @@ private slots:
 
 signals:
     void send_signal();//这个函数用户向主界面通知关闭的消息
+    void pas_sig();
 
 private:
     void Init();
+     qint64 m_MessageType;
 
 private:
     Ui::message_qemu *ui;
@@ -65,4 +84,4 @@ private:
 
 };
 
-#endif // MESSAGE_QEMU_H
+//#endif  MESSAGE_QEMU_H

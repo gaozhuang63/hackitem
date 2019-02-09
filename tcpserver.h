@@ -1,10 +1,12 @@
-#ifndef TCPSERVER_H
-#define TCPSERVER_H
+#pragma once
+//#ifndef TCPSERVER_H
+//#define TCPSERVER_H
 
 #include <QTcpServer>
 #include <QHash>
 #include "tcpsocket.h"
 
+class TcpSocket;
 
 //继承QTCPSERVER以实现多线程TCPscoket的服务器。
 //如果socket的信息处理直接处理的话，很多新建的信号和槽是用不到的
@@ -38,4 +40,4 @@ private:
 
 };
 
-#endif // TCPSERVER_H
+//#endif  TCPSERVER_H

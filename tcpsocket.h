@@ -1,5 +1,6 @@
-#ifndef TCPSOCKET_H
-#define TCPSOCKET_H
+#pragma once                                    //相互包含头文件
+//#ifndef TCPSOCKET_H
+//#define TCPSOCKET_H
 
 #include <QTcpSocket>
 #include <QQueue>
@@ -7,9 +8,13 @@
 #include <QByteArray>
 #include <QFile>
 #include <QTime>
+#include "message_qemu.h"
 
 //=====枚举标志信息类型，分别为登陆、消息、文件==============
 enum MessageType{Login,Message,FileName,NONE};
+
+class message_qemu;
+
 
 class TcpSocket : public QTcpSocket
 {
@@ -22,15 +27,21 @@ public:
 public:
     //电脑信息
     static QStringList list;
+    static QString pas_signal;
+
+    void rejectevt();
+
 
 signals:
     void readDataSig(const int,const QString &,const quint16,const QByteArray &);
     void sockDisConnect(const int ,const QString &,const quint16, QThread *);//NOTE:断开连接的用户信息，此信号必须发出！线程管理类根据信号计数的
 
+
 public slots:
     void sentData(const QByteArray & ,const int);//发送信号的槽
     void disConTcpSlot(int i);
     void OnSendFileDataSlot(qint64);
+    void passevt();
 
 protected slots:
     void readDataSlot();//接收数据
@@ -47,7 +58,7 @@ protected:
 private:
     qintptr socketID;
     QMetaObject::Connection dis;
-
+    message_qemu *msg;
     qint64 m_MessageType;
 
     //接收文件参数
@@ -70,4 +81,4 @@ private:
     QByteArray outBlock;//数据缓冲区，即存放每次要发送的数据
 };
 
-#endif // TCPSOCKET_H
+//#endif  TCPSOCKET_H

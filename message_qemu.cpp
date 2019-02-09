@@ -10,13 +10,11 @@
 #include <QTimer>
 #include <QDesktopWidget>
 #include <QPropertyAnimation>
-#include "tcpserver.h"
-#include "tcpsocket.h"
-#include <QDebug>
-#include<QStandardItemModel>
+#include <QStandardItemModel>
 #include <QTimer>
-
-
+#include <QMessageBox>
+#include <QDebug>
+#include <QTcpSocket>
 
 #define TIMER_TIMEOUT   (0.35*1000)
 #define STOPTIME (0.1*1000)
@@ -311,8 +309,10 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget->setItem(5,1,new QTableWidgetItem(config[8]));
         ui->tableWidget->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget->setItem(7,1,new QTableWidgetItem(config[10]));
-        repaint();
 
+        repaint();
+        passEvent();
+        qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"aaaaaaa"<< config[1];
         }
 
@@ -330,7 +330,8 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_2->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_2->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-
+        passEvent();
+        qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"bbbbbbbb"<< config[1];
         }
     else if(config[1]=="3")
@@ -347,7 +348,8 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_3->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_3->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-
+        passEvent();
+        qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"cccc"<< config[1];
         }
     else if(config[1]=="4")
@@ -364,7 +366,8 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_4->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_4->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-
+        passEvent();
+        qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"ddd"<< config[1];
         }
     else if(config[1]=="5")
@@ -381,7 +384,8 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_5->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_5->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-
+        passEvent();
+        qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"eeee"<< config[1];
         }
     else if(config[1]=="6")
@@ -401,12 +405,10 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_6->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_6->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-
+        passEvent();
+        qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"ffffff"<< config[1];
         }
-
-
-
 
 
     //    qDebug() << config;
@@ -561,3 +563,24 @@ void message_qemu::handleTimeout5()
          ui->pushButton_5->setIcon(button_ico_on);
     }
 }
+
+
+void message_qemu::passEvent()
+{
+    choose = QMessageBox::information(NULL, "WARNING!!!", "是否允许登陆", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+    if (choose == QMessageBox::Yes)
+    {
+        emit pas_sig();
+        TcpSocket::pas_signal = "pass";
+        qDebug() <<"发信号了哎哎哎哎";
+
+    }
+
+    else if(choose  == QMessageBox::No)
+    {
+        emit pas_sig();
+        TcpSocket::pas_signal = "reject" ;
+
+    }
+}
+

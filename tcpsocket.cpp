@@ -3,9 +3,9 @@
 #include <QHostAddress>
 #include <QDebug>
 #include <QMessageBox>
-#include "message_qemu.h"
 
 QStringList TcpSocket::list;
+QString TcpSocket::pas_signal;
 
 TcpSocket::TcpSocket(qintptr socketDescriptor, QObject *parent) : //构造函数在主线程执行，lambda在子线程
     QTcpSocket(parent),socketID(socketDescriptor)
@@ -32,6 +32,10 @@ TcpSocket::TcpSocket(qintptr socketDescriptor, QObject *parent) : //构造函数
 
     connect(&watcher,&QFutureWatcher<QByteArray>::finished,this,&TcpSocket::startNext);
     connect(&watcher,&QFutureWatcher<QByteArray>::canceled,this,&TcpSocket::startNext);
+    msg = new message_qemu;
+    /*qDebug()<<"测试返回值"<<*/
+    connect(msg,SIGNAL(pas_sig()),this,SLOT(passevt()));
+
 
     qDebug() << "new connect" ;
 }
@@ -95,8 +99,6 @@ void TcpSocket::readDataSlot()
                 log_pas.append(this->readAll());       //readAll()是QTcpSocket从QIODevice继承的public function，直接调用就可以读取从服务器发过来的数据了
                 //log.append(this->read(qint64(14)));
 
-
-
                 list=log_pas.split("#");
                 qDebug()<<list ;
                 qDebug() << "账号：" << list[1];
@@ -110,36 +112,8 @@ void TcpSocket::readDataSlot()
                 qDebug() << "硬盘：" << list[9];
                 qDebug() << "屏幕分辨率：" << list[10];
 
-
-
 //                qDebug() << "messageLen:" << log_pas.size() << "messageData:" << log_pas ;
-                if(list[1]=="111"&&list[2]=="111")
-                {
-                    QByteArray outBlock;
-                    QDataStream sendOut(&outBlock,QIODevice::WriteOnly);
-                    sendOut.setVersion(QDataStream::Qt_5_0);
 
-                    m_MessageType = Login;
-                    //sendOut << m_MessageType;
-                   // QMessageBox::information(NULL, "WARNING!!!", "是否允许登陆", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-
-
-
-                    QString strMessage1 = "pass";
-                    int nn = outBlock.size();
-                    nn = outBlock.length();
-
-                    sendOut << qint64(0) << qint64(0) << strMessage1.toUtf8();
-
-                    qint64 totalBytes = outBlock.size();
-
-                    sendOut.device()->seek(0);
-                    sendOut << m_MessageType << totalBytes;
-
-                    //qDebug() << "data.length(): " << outBlock.length() << "SendData:" << outBlock;
-
-                    this->write(outBlock);
-                }
 
                 break;
             }
@@ -310,13 +284,6 @@ void TcpSocket::readDataSlot()
 
 
 
-
-
-
-
-
-
-
 //    if (!watcher.isRunning())//放到异步线程中处理。
 //    {
 //        watcher.setFuture(QtConcurrent::run(this,&TcpSocket::handleData,datas.dequeue(),this->peerAddress().toString(),this->peerPort()));
@@ -441,4 +408,42 @@ void TcpSocket::OnSendFileDataSlot(qint64 numBytes)
         sendBytesWritten = 0;
         sendBytesToWrite = 0;
     }
+}
+
+void TcpSocket::passevt()
+{
+
+    qDebug() <<"执行我啊啊啊啊pas_signal :"<< TcpSocket::pas_signal ;
+
+    QByteArray outBlock;
+    QDataStream sendOut(&outBlock,QIODevice::WriteOnly);
+    sendOut.setVersion(QDataStream::Qt_5_0);
+    m_MessageType = Login;
+
+    QString strMessage1 = TcpSocket::pas_signal;
+    int nn = outBlock.size();
+    nn = outBlock.length();
+    sendOut << qint64(0) << qint64(0) << strMessage1.toUtf8();
+    qint64 totalBytes = outBlock.size();
+    sendOut.device()->seek(0);
+    sendOut << m_MessageType << totalBytes;
+    this->write(outBlock);
+
+}
+
+
+void TcpSocket::rejectevt()
+{
+    QByteArray outBlock;
+    QDataStream sendOut(&outBlock,QIODevice::WriteOnly);
+    sendOut.setVersion(QDataStream::Qt_5_0);
+    m_MessageType = Login;
+    QString strMessage1 = "reject";
+    int nn = outBlock.size();
+    nn = outBlock.length();
+    sendOut << qint64(0) << qint64(0) << strMessage1.toUtf8();
+    qint64 totalBytes = outBlock.size();
+    sendOut.device()->seek(0);
+    sendOut << m_MessageType << totalBytes;
+    this->write(outBlock);
 }
