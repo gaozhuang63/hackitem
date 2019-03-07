@@ -57,14 +57,14 @@
           <widget class="QLabel" name="label">
            <property name="minimumSize">
             <size>
-             <width>445</width>
-             <height>300</height>
+             <width>200</width>
+             <height>200</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>445</width>
-             <height>300</height>
+             <width>200</width>
+             <height>200</height>
             </size>
            </property>
            <property name="text">
@@ -75,25 +75,6 @@
            </property>
            <property name="scaledContents">
             <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>445</width>
-             <height>409</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>TextLabel</string>
            </property>
           </widget>
          </item>
@@ -372,6 +353,36 @@
                       </row>
                       <column/>
                       <column/>
+                      <item row="0" column="0">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </item>
+                      <item row="0" column="1">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </item>
+                      <item row="1" column="0">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </item>
+                      <item row="1" column="1">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </item>
+                      <item row="2" column="0">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </item>
+                      <item row="2" column="1">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </item>
                      </widget>
                     </item>
                    </layout>
@@ -1298,7 +1309,7 @@
            </widget>
            <widget class="QWidget" name="tab_5">
             <attribute name="title">
-             <string>哈</string>
+             <string>Configure</string>
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,2">
              <item>
@@ -1965,116 +1976,303 @@ border-radius: 5px;           /*圆角*/
              </item>
             </layout>
            </widget>
-           <widget class="QWidget" name="tab_4">
+           <widget class="QWidget" name="tab">
             <attribute name="title">
-             <string>Configure</string>
+             <string>GUID</string>
             </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_5">
+            <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1,2">
              <item>
-              <widget class="QTabWidget" name="tabWidget">
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="tabPosition">
-                <enum>QTabWidget::West</enum>
-               </property>
-               <property name="tabShape">
-                <enum>QTabWidget::Rounded</enum>
-               </property>
-               <property name="currentIndex">
-                <number>5</number>
-               </property>
-               <property name="elideMode">
-                <enum>Qt::ElideNone</enum>
-               </property>
-               <property name="usesScrollButtons">
-                <bool>false</bool>
-               </property>
-               <property name="movable">
-                <bool>true</bool>
-               </property>
-               <property name="tabBarAutoHide">
-                <bool>false</bool>
-               </property>
-               <widget class="QWidget" name="tab">
-                <attribute name="title">
-                 <string>RTA</string>
-                </attribute>
-                <layout class="QGridLayout" name="gridLayout_2">
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="label_5">
-                   <property name="text">
-                    <string>TextLabel</string>
+              <widget class="QWidget" name="widget_30" native="true">
+               <widget class="QWidget" name="widget_29" native="true">
+                <property name="geometry">
+                 <rect>
+                  <x>100</x>
+                  <y>320</y>
+                  <width>470</width>
+                  <height>311</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>470</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>470</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_15">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <spacer name="horizontalSpacer_18">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
                    </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QLabel" name="label_4">
-                   <property name="text">
-                    <string>TextLabel</string>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
                    </property>
-                  </widget>
+                  </spacer>
                  </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_3">
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget_7">
                    <property name="minimumSize">
                     <size>
-                     <width>600</width>
-                     <height>400</height>
+                     <width>410</width>
+                     <height>300</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>600</width>
-                     <height>400</height>
+                     <width>410</width>
+                     <height>300</height>
                     </size>
                    </property>
-                   <property name="text">
-                    <string>TextLabel</string>
+                   <property name="styleSheet">
+                    <string notr="true">QTableWidget{background-color: rgba(255,255,255,0);
+			 font: 25 10pt ;
+		     color: rgb(245, 22, 22);
+			 
+			}&quot;
+
+</string>
                    </property>
+                   <property name="showGrid">
+                    <bool>false</bool>
+                   </property>
+                   <property name="columnCount">
+                    <number>2</number>
+                   </property>
+                   <attribute name="horizontalHeaderVisible">
+                    <bool>false</bool>
+                   </attribute>
+                   <attribute name="horizontalHeaderDefaultSectionSize">
+                    <number>200</number>
+                   </attribute>
+                   <attribute name="horizontalHeaderMinimumSectionSize">
+                    <number>200</number>
+                   </attribute>
+                   <attribute name="verticalHeaderDefaultSectionSize">
+                    <number>37</number>
+                   </attribute>
+                   <attribute name="verticalHeaderMinimumSectionSize">
+                    <number>37</number>
+                   </attribute>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <row>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </row>
+                   <column/>
+                   <column/>
                   </widget>
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="tab_2">
-                <attribute name="title">
-                 <string>Configure</string>
-                </attribute>
-                <layout class="QGridLayout" name="gridLayout_4"/>
+               <widget class="QWidget" name="widget_32" native="true">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>10</y>
+                  <width>571</width>
+                  <height>301</height>
+                 </rect>
+                </property>
+                <widget class="QPushButton" name="RecButton">
+                 <property name="geometry">
+                  <rect>
+                   <x>120</x>
+                   <y>110</y>
+                   <width>150</width>
+                   <height>150</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>150</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
+                   <height>150</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>COM</string>
+                 </property>
+                </widget>
+                <widget class="QWidget" name="layoutWidget">
+                 <property name="geometry">
+                  <rect>
+                   <x>340</x>
+                   <y>160</y>
+                   <width>208</width>
+                   <height>52</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_16">
+                  <item>
+                   <widget class="QPushButton" name="pushButton_7">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>开始接收</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_8">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>开始比较</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
                </widget>
-               <widget class="QWidget" name="tab_8">
-                <attribute name="title">
-                 <string>页</string>
-                </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_31" native="true">
+               <widget class="QTextBrowser" name="textBrowser_2">
+                <property name="geometry">
+                 <rect>
+                  <x>260</x>
+                  <y>70</y>
+                  <width>451</width>
+                  <height>221</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QTextBrowser{ 
+background-color: rgb(255,132,139);
+border-radius:3px; 
+color:rgb(0,0,0);
+font: 87 16pt &quot;Arial Black&quot;;
+
+
+}
+</string>
+                </property>
                </widget>
-               <widget class="QWidget" name="tab_9">
-                <attribute name="title">
-                 <string>页</string>
-                </attribute>
-               </widget>
-               <widget class="QWidget" name="tab_10">
-                <attribute name="title">
-                 <string>页</string>
-                </attribute>
-               </widget>
-               <widget class="QWidget" name="tab_11">
-                <attribute name="title">
-                 <string>页</string>
-                </attribute>
+               <widget class="QComboBox" name="comboBox">
+                <property name="geometry">
+                 <rect>
+                  <x>60</x>
+                  <y>160</y>
+                  <width>150</width>
+                  <height>30</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>150</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <item>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>GUID1</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>GUID2</string>
+                 </property>
+                </item>
                </widget>
               </widget>
              </item>
             </layout>
-           </widget>
-           <widget class="QWidget" name="tab_6">
-            <attribute name="title">
-             <string>嘿</string>
-            </attribute>
-           </widget>
-           <widget class="QWidget" name="tab_7">
-            <attribute name="title">
-             <string>吼</string>
-            </attribute>
            </widget>
           </widget>
          </item>

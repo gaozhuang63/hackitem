@@ -136,7 +136,7 @@ Widget::~Widget()
 //加载背景图
 void Widget::paintEvent(QPaintEvent *)
 {
-    QPixmap pixmap = QPixmap(":/new/background/pic/background/page.jpg").scaled(this->size()); //scaled 缩放背景
+    QPixmap pixmap = QPixmap(":/new/background/pic/background/page1.jpg").scaled(this->size()); //scaled 缩放背景
     QPainter painter(this);
     painter.drawPixmap(this->rect(), pixmap);
 }

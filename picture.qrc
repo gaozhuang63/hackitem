@@ -8,6 +8,7 @@
         <file>pic/background/worldmap.jpg</file>
         <file>pic/background/Chinamap.jpg</file>
         <file>pic/background/Chinamap_chosen.jpg</file>
+        <file>pic/background/page1.jpg</file>
     </qresource>
     <qresource prefix="/new/icon">
         <file>pic/icon/com_offline.png</file>
@@ -51,5 +52,6 @@
         <file>pic/unit/hacked-2127635_1280.png</file>
         <file>pic/unit/skull-and-crossbones-1518822_1920.jpg</file>
         <file>pic/unit/tech-1.jpg</file>
+        <file>pic/unit/LOHO.png</file>
     </qresource>
 </RCC>

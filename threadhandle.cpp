@@ -95,6 +95,15 @@ void ThreadHandle::initThreadSize() //建立好线程并启动，
     }
 }
 
+
+
+
+
+
+
+
+
+
 QThread * ThreadHandle::findHandleSize() //查找到线程里的连接数小于最大值就返回查找到的，找不到就新建一个线程
 {
     for (auto it  = threadSize.begin();it != threadSize.end() ;++it)

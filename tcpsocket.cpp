@@ -3,6 +3,8 @@
 #include <QHostAddress>
 #include <QDebug>
 #include <QMessageBox>
+#include <QChar>
+#include <QTextCodec>
 
 QStringList TcpSocket::list;
 QString TcpSocket::pas_signal;
@@ -32,9 +34,10 @@ TcpSocket::TcpSocket(qintptr socketDescriptor, QObject *parent) : //构造函数
 
     connect(&watcher,&QFutureWatcher<QByteArray>::finished,this,&TcpSocket::startNext);
     connect(&watcher,&QFutureWatcher<QByteArray>::canceled,this,&TcpSocket::startNext);
-    msg = new message_qemu;
-    /*qDebug()<<"测试返回值"<<*/
-    connect(msg,SIGNAL(pas_sig()),this,SLOT(passevt()));
+    //message_qemu *msg = new message_qemu;
+    //qDebug()<<"测试返回值1:"<<
+
+
 
 
     qDebug() << "new connect" ;
@@ -75,10 +78,34 @@ void TcpSocket::readDataSlot()
     QDataStream in(this);
     in.setVersion(QDataStream::Qt_5_0);
 
+    QByteArray data ;
+    data = this->readAll();
+    emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),data);
+    QTextCodec *tc = QTextCodec::codecForName("GBK");
+    log_pas = tc->toUnicode(data);
+    log_pas.append(this->readAll());
+    list=log_pas.split("#");
+
+
+//    qDebug() << "读取到的数据data:" <<data ;
+//    log_pas = data ;
+//    qDebug() << "读取到的数据data:" <<log_pas ;
+//    qDebug()<<list ;
+//    qDebug() << "账号：" << list[1];
+//    qDebug() << "密码：" << list[2];
+//    qDebug() << "电脑信息：" << list[3];
+//    qDebug() << "MAC地址：" << list[4];
+//    qDebug() << "IP地址：" << list[5];
+//    qDebug() << "内存：" << list[6];
+//    qDebug() << "CPU：" << list[7];
+//    qDebug() << "操作系统：" << list[8];
+//    qDebug() << "硬盘：" << list[9];
+//    qDebug() << "屏幕分辨率：" << list[10];
+
 //    float useTime = time.elapsed();
 
-    if (bytesReceived <= sizeof(qint64))                                                        //如果接受到的数据小于64 说明刚开始接收
-    {
+//    if (bytesReceived <= sizeof(qint64))                                                        //如果接受到的数据小于64 说明刚开始接收
+//    {
         in >> m_MessageType;
         bytesReceived += sizeof(qint64);
         if(this->bytesAvailable() <= 0)
@@ -112,8 +139,6 @@ void TcpSocket::readDataSlot()
                 qDebug() << "硬盘：" << list[9];
                 qDebug() << "屏幕分辨率：" << list[10];
 
-//                qDebug() << "messageLen:" << log_pas.size() << "messageData:" << log_pas ;
-
 
                 break;
             }
@@ -133,6 +158,7 @@ void TcpSocket::readDataSlot()
                 break;
             }
             case FileName:
+
             {
                 int sizeHead = 0;
                 qint64 headSize = 0;
@@ -175,7 +201,7 @@ void TcpSocket::readDataSlot()
         }
 
         //return;
-    }
+//    }
 
     if (bytesReceived < TotalBytes && this->bytesAvailable() > 0)
     {
@@ -420,7 +446,7 @@ void TcpSocket::passevt()
     sendOut.setVersion(QDataStream::Qt_5_0);
     m_MessageType = Login;
 
-    QString strMessage1 = TcpSocket::pas_signal;
+    QString strMessage1 = "pass";
     int nn = outBlock.size();
     nn = outBlock.length();
     sendOut << qint64(0) << qint64(0) << strMessage1.toUtf8();

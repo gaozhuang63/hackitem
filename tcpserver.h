@@ -21,6 +21,7 @@ public:
 signals:
     void connectClientSig(const int , const QString & ,const quint16 );//发送新用户连接信息
     void readDataSig(const int,const QString &, quint16, const QByteArray &);//发送获得用户发过来的数据
+   // void readDataSig1(const int,const QString &, quint16, const QByteArray &);//发送获得用户发过来的数据
     void sockDisConnectSig(int ,QString ,quint16);//断开连接的用户信息
     void sentDataSig(const QByteArray &,const int);//向scoket发送消息
     void sentDisConnectSig(int i); //断开特定连接，并释放资源，-1为断开所有。

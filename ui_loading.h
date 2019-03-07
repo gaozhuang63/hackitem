@@ -39,7 +39,7 @@ public:
         widget->setObjectName(QString::fromUtf8("widget"));
         widget->setMinimumSize(QSize(550, 183));
         widget->setMaximumSize(QSize(550, 183));
-        widget->setStyleSheet(QString::fromUtf8("background-color:rgb(132, 132, 132)"));
+        widget->setStyleSheet(QString::fromUtf8("background-color:rgb(199, 199, 199)"));
         verticalLayout = new QVBoxLayout(widget);
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));

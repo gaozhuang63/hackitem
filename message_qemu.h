@@ -16,6 +16,7 @@
 #include <QByteArray>
 #include <QFile>
 #include <QTime>
+#include <QProcess>
 
 //=====枚举标志信息类型，分别为登陆、消息、文件==============
 //enum MessageType{Login,Message,FileName,NONE};
@@ -37,7 +38,7 @@ public:
     ~message_qemu();
     void paintEvent(QPaintEvent *);
 
-
+    void Recputton();
     QMovie *movie;
     QMovie *movie_1;
     QMovie *movie_2;
@@ -49,6 +50,9 @@ public:
     test *t1;
     qintptr socketDescriptor;
     int choose;
+    int wid_x;
+    int wid_y;
+    QByteArray ttt;
 
 
 public slots:
@@ -59,16 +63,28 @@ public slots:
     void handleTimeout3();  //超时处理函数
     void handleTimeout4();  //超时处理函数
     void handleTimeout5();  //超时处理函数
+    void handleTimeoutRec();  //超时处理函数
     void passEvent();
+    void endload();
+    void endcompare();
+    void on_readoutput();
+    void on_readerror();
 
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_2_clicked();
     void OnConnectClientSlot(const int , const QString & ,const quint16 );
     void OnReadDataSlot(const int,const QString &, quint16, const QByteArray &);
+    //void OnReadDataSlot1(const int,const QString &, quint16, const QByteArray &);
     void OnsockDisConnectSlot(int ,QString ,quint16);
 
     void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_comboBox_currentIndexChanged(int index);
 
 signals:
     void send_signal();//这个函数用户向主界面通知关闭的消息
@@ -81,6 +97,7 @@ private:
 private:
     Ui::message_qemu *ui;
     QTimer *Timer;
+    QProcess* caller;
 
 };
 

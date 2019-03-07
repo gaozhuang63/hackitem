@@ -16,11 +16,11 @@
 #include <QDebug>
 #include <QTcpSocket>
 
+
 #define TIMER_TIMEOUT   (0.35*1000)
 #define STOPTIME (0.1*1000)
 
 int CurrentValue = 0;
-
 
 
 message_qemu::message_qemu(QWidget *parent) :
@@ -44,10 +44,12 @@ message_qemu::message_qemu(QWidget *parent) :
     ui->verticalLayout_2->setSpacing(0);
     ui->verticalLayout_2->setContentsMargins(0, 0, 0, 0);
     ui->verticalLayout_2->setDirection(QBoxLayout::BottomToTop);//自下而上
+    wid_x=width();
+    wid_y=height();
 
 
-    ui->tabWidget->tabBar()->setStyle(new CustomTabStyle);                             //设置横向文字
-    ui->tabWidget->setStyleSheet("QTabWidget::pane {border-left:0px solid #eeeeee;\
+//    ui->tabWidget->tabBar()->setStyle(new CustomTabStyle);                             //设置横向文字
+//    ui->tabWidget->setStyleSheet("QTabWidget::pane {border-left:0px solid #eeeeee;\
                                                     background:  transparent;}");           /*整个最上面的tab栏*/
     ui->tabWidget_2->setStyleSheet("QTabWidget#tabWidget_2::tab-bar{ alignment: left; \
                                                          left:160px;}\
@@ -73,7 +75,7 @@ message_qemu::message_qemu(QWidget *parent) :
     movie->start();
 
     movie_1 = new QMovie(":/new/unit/pic/unit/sc_db.gif");
-    ui->label_3->setMovie(movie_1);
+//    ui->label_3->setMovie(movie_1);
     movie_1->start();
 
 //    movie_2= new QMovie(":/new/unit/pic/unit/number.gif");
@@ -97,6 +99,13 @@ message_qemu::message_qemu(QWidget *parent) :
 
 
     QIcon button_ico_off(":/new/icon/pic/icon/com_offline.png");
+
+    ui->RecButton->setIcon(button_ico_off);
+    ui->RecButton->setMinimumSize(150,150);
+    ui->RecButton->setMaximumSize(150,150);
+    ui->RecButton->setIconSize(QSize(80,80));
+    ui->RecButton->setFlat(true);                                      //按钮无边框
+    ui->RecButton->setStyleSheet("color:white");                       //按钮背景透明 对ICon无效
 
     ui->pushButton->setIcon(button_ico_off);
     ui->pushButton->setMinimumSize(150,150);
@@ -211,6 +220,57 @@ message_qemu::message_qemu(QWidget *parent) :
     ui->tableWidget_6->setItem(6,0,new QTableWidgetItem("硬盘："));
     ui->tableWidget_6->setItem(7,0,new QTableWidgetItem("屏幕分辨率："));
 
+    ui->tableWidget_7->setEditTriggers(QAbstractItemView::NoEditTriggers);  //禁止编辑
+    ui->tableWidget_7->verticalHeader()->setVisible(true); // 隐藏水平header
+    ui->tableWidget_7->setItem(0,0,new QTableWidgetItem("电脑信息："));
+    ui->tableWidget_7->setItem(1,0,new QTableWidgetItem("MAC地址："));
+    ui->tableWidget_7->setItem(2,0,new QTableWidgetItem("IP地址："));
+    ui->tableWidget_7->setItem(3,0,new QTableWidgetItem("内存："));
+    ui->tableWidget_7->setItem(4,0,new QTableWidgetItem("CPU："));
+    ui->tableWidget_7->setItem(5,0,new QTableWidgetItem("操作系统："));
+    ui->tableWidget_7->setItem(6,0,new QTableWidgetItem("硬盘："));
+    ui->tableWidget_7->setItem(7,0,new QTableWidgetItem("屏幕分辨率："));
+
+    //TcpSocket *a = new TcpSocket(99);
+    //const TcpSocket  a(qintptr ) ;
+
+    //qDebug()<<"casdfajskhgjkashgdjkghadsfg: "<<connect(a, SIGNAL(pas_sig()), this , SLOT(passEvent()) ,Qt::QueuedConnection);
+
+
+
+//    caller = new QProcess(this);
+//    QString FilePath = "E:\\mod1\\hackfinal\\debug";
+//    QString path = FilePath + "tcp_server.exe";
+//    caller->start("E:\\mod1\\hackfinal\\debug\\tcp_server.exe");
+//    //connect(caller , SIGNAL(readAll()) , this , SLOT(on_readoutput()));
+
+//    if (caller->waitForStarted(12))
+//    {
+//        ttt = caller->readAll();
+
+//    }
+//    connect(caller , SIGNAL(readyReadStandardOutput()) , this , SLOT(on_readoutput()));
+//    //connect(caller , SIGNAL(readyReadStandardOutput()) , this , SLOT(on_readoutput()));
+//    connect(caller , SIGNAL(readyReadStandardError()) , this , SLOT(on_readerror()));
+
+    //connect(caller,SIGNAL(finished(int,QProcess::ExitStatus)),SLOT(finished(int,QProcess::ExitStatus)));
+
+//    if(caller->waitForStarted(12))
+//    {
+//        qDebug() << tr("server.exe启动成功");
+
+//        //等待外部程序结束，如果在给定的时间内关闭外部程序，返回为真，超时返回false
+//        if(caller->waitForFinished(10000))
+//            qDebug() << tr("timer.exe程序被关闭");
+//        else
+//            qDebug() << tr("timer.exe程序在规定时间内没有被关闭");
+//    }
+
+
+    TcpSocket *a = new TcpSocket(99);
+    connect(a , SIGNAL(send_sig()), this , SLOT(passEvent()) );
+
+
     this->setAttribute(Qt::WA_DeleteOnClose,1);     //子窗口关闭销毁
     qDebug()<<"构造了video窗口"<<endl;
 
@@ -218,7 +278,11 @@ message_qemu::message_qemu(QWidget *parent) :
 
 message_qemu::~message_qemu()
 {
+
+
     delete ui;
+
+
 }
 
 
@@ -242,6 +306,10 @@ void message_qemu::on_pushButton_clicked()
 void message_qemu::on_pushButton_2_clicked()
 {
 
+    qDebug()<<"ttt:" << ttt ;
+    QString c = "taskkill /im tcp_server.exe /f";
+    caller->execute(c);
+    caller->close();
 //   load = new loading(this);
 //   load->show();
 //   load->move ((msg_x - load->width())/2,(msg_y - load->height())/2);
@@ -253,8 +321,8 @@ void message_qemu::load_info()
 {
 
     load->close();
-    t1=new test();
-    t1->show();
+    t1 = new test();
+    t1 -> show();
 
 }
 
@@ -263,6 +331,7 @@ void message_qemu::Init()
     TcpServer *ser = new TcpServer();
     connect(ser,&TcpServer::connectClientSig,this,&message_qemu::OnConnectClientSlot);
     connect(ser,&TcpServer::readDataSig,this,&message_qemu::OnReadDataSlot);
+    //connect(ser,&TcpServer::readDataSig1,this,&message_qemu::OnReadDataSlot);
     connect(ser,&TcpServer::sockDisConnectSig,this,&message_qemu::OnsockDisConnectSlot);
     ser->listen(QHostAddress::Any,6666);
     ui->textBrowser->append("listen");
@@ -282,6 +351,7 @@ void message_qemu::OnConnectClientSlot(const int , const QString &strIP ,const q
 void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const QByteArray &strData)
 {
     QString str;
+    int flag = 0;
 
     QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
     str += "IP:";
@@ -289,17 +359,25 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
     str += "Data:";
     str += strData;
 
+
     qDebug() << str;
 //    qDebug() << "\n验证啊啊啊" << TcpSocket::list;
 
     qDebug () << "list:"<< TcpSocket::list [1];
     config = TcpSocket::list;
+    qDebug () << "config: " <<config ;
 
     if(config[1]=="1")
+        {
+
+        if (flag == 0)
         {
         Timer = new QTimer(this);
         connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout()));
         Timer->start(TIMER_TIMEOUT);
+        flag = 1;
+        }
+
         //ui->pushButton->setIcon(button_ico_on);
         ui->tableWidget->setItem(0,1,new QTableWidgetItem(config[3]));
         ui->tableWidget->setItem(1,1,new QTableWidgetItem(config[4]));
@@ -311,16 +389,38 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget->setItem(7,1,new QTableWidgetItem(config[10]));
 
         repaint();
-        passEvent();
-        qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
+
+        //passEvent();
+        qDebug() <<"TcpSocket::pas_signal:" <<TcpSocket::pas_signal;
         qDebug() <<"aaaaaaa"<< config[1];
+        }
+    else if(config[1] == "0")
+        {
+
+        Recputton();
+
+        ui->tableWidget_7->setItem(0,1,new QTableWidgetItem(config[3]));
+        ui->tableWidget_7->setItem(1,1,new QTableWidgetItem(config[4]));
+        ui->tableWidget_7->setItem(2,1,new QTableWidgetItem(config[5]));
+        ui->tableWidget_7->setItem(3,1,new QTableWidgetItem(config[6]));
+        ui->tableWidget_7->setItem(4,1,new QTableWidgetItem(config[7]));
+        ui->tableWidget_7->setItem(5,1,new QTableWidgetItem(config[8]));
+        ui->tableWidget_7->setItem(6,1,new QTableWidgetItem(config[9]));
+        ui->tableWidget_7->setItem(7,1,new QTableWidgetItem(config[10]));
+        repaint();
+
         }
 
     else if(config[1]=="2")
         {
+        if (flag == 0)
+        {
         Timer = new QTimer(this);
         connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout1()));
         Timer->start(TIMER_TIMEOUT);
+        flag = 1;
+        }
+
         ui->tableWidget_2->setItem(0,1,new QTableWidgetItem(config[3]));
         ui->tableWidget_2->setItem(1,1,new QTableWidgetItem(config[4]));
         ui->tableWidget_2->setItem(2,1,new QTableWidgetItem(config[5]));
@@ -330,15 +430,19 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_2->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_2->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-        passEvent();
+        //passEvent();
         qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"bbbbbbbb"<< config[1];
         }
     else if(config[1]=="3")
         {
+        if (flag == 0)
+        {
         Timer = new QTimer(this);
         connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout2()));
         Timer->start(TIMER_TIMEOUT);
+        flag = 1;
+        }
         ui->tableWidget_3->setItem(0,1,new QTableWidgetItem(config[3]));
         ui->tableWidget_3->setItem(1,1,new QTableWidgetItem(config[4]));
         ui->tableWidget_3->setItem(2,1,new QTableWidgetItem(config[5]));
@@ -348,15 +452,19 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_3->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_3->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-        passEvent();
+        //passEvent();
         qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"cccc"<< config[1];
         }
     else if(config[1]=="4")
         {
+        if (flag == 0)
+        {
         Timer = new QTimer(this);
         connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout3()));
         Timer->start(TIMER_TIMEOUT);
+        flag = 1;
+        }
         ui->tableWidget_4->setItem(0,1,new QTableWidgetItem(config[3]));
         ui->tableWidget_4->setItem(1,1,new QTableWidgetItem(config[4]));
         ui->tableWidget_4->setItem(2,1,new QTableWidgetItem(config[5]));
@@ -366,15 +474,19 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_4->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_4->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-        passEvent();
+        //passEvent();
         qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"ddd"<< config[1];
         }
     else if(config[1]=="5")
         {
+        if (flag == 0)
+        {
         Timer = new QTimer(this);
         connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout4()));
         Timer->start(TIMER_TIMEOUT);
+        flag = 1;
+        }
         ui->tableWidget_5->setItem(0,1,new QTableWidgetItem(config[3]));
         ui->tableWidget_5->setItem(1,1,new QTableWidgetItem(config[4]));
         ui->tableWidget_5->setItem(2,1,new QTableWidgetItem(config[5]));
@@ -384,16 +496,19 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_5->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_5->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-        passEvent();
+        //passEvent();
         qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"eeee"<< config[1];
         }
     else if(config[1]=="6")
         {
+        if (flag == 0)
+        {
         Timer = new QTimer(this);
         connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeout5()));
         Timer->start(TIMER_TIMEOUT);
-
+        flag = 1;
+        }
 
 
         ui->tableWidget_6->setItem(0,1,new QTableWidgetItem(config[3]));
@@ -405,7 +520,7 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
         ui->tableWidget_6->setItem(6,1,new QTableWidgetItem(config[9]));
         ui->tableWidget_6->setItem(7,1,new QTableWidgetItem(config[10]));
         repaint();
-        passEvent();
+        //passEvent();
         qDebug() <<"TcpSocket::pas_signal" <<TcpSocket::pas_signal;
         qDebug() <<"ffffff"<< config[1];
         }
@@ -417,6 +532,7 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
     ui->textBrowser->append(str);
 
 }
+
 
 void message_qemu::OnsockDisConnectSlot(int ,QString strIP ,quint16)
 {
@@ -564,23 +680,138 @@ void message_qemu::handleTimeout5()
     }
 }
 
+void message_qemu::handleTimeoutRec()
+{
+    QIcon button_ico_on(":/new/icon/pic/icon/com_online.png");
+    QIcon button_ico_off(":/new/icon/pic/icon/com_offline.png");
+    CurrentValue++;
+    if(CurrentValue == 13)
+     {
+        ui->RecButton->setIcon(button_ico_on);
+        CurrentValue = 0 ;
+        Timer->stop();
+     }
+    else if (CurrentValue%3==0 ){
+        ui->RecButton->setIcon(button_ico_off);
+    }
+    else if (CurrentValue%3 ==1 ){
+        ui->RecButton->setIcon(button_ico_on);
+    }
+    else if (CurrentValue%3 ==2 ){
+         ui->RecButton->setIcon(button_ico_on);
+    }
+}
+
 
 void message_qemu::passEvent()
 {
     choose = QMessageBox::information(NULL, "WARNING!!!", "是否允许登陆", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
     if (choose == QMessageBox::Yes)
     {
-        emit pas_sig();
+
         TcpSocket::pas_signal = "pass";
-        qDebug() <<"发信号了哎哎哎哎";
+
+//        TcpSocket *a = new TcpSocket(99);
+//        connect(this , SIGNAL(pas_sig()), a , SLOT(passevt()) ,Qt::QueuedConnection);
+
+        emit pas_sig();
+        //qDebug() <<"发信号了哎哎哎哎";
+
+        //TcpSocket a(qintptr socketDescriptor);
+        //a->setSocketDescriptor(socketDescriptor);
+
 
     }
 
     else if(choose  == QMessageBox::No)
     {
-        emit pas_sig();
+
         TcpSocket::pas_signal = "reject" ;
+        emit pas_sig();
+    }
+}
+
+
+
+void message_qemu::Recputton()
+{
+
+
+    Timer = new QTimer(this);
+    connect(Timer, SIGNAL(timeout()), this, SLOT(handleTimeoutRec()));
+    Timer->start(TIMER_TIMEOUT);
+
+
+}
+
+void message_qemu::on_pushButton_7_clicked()
+{
+    load = new loading(this);
+    load->show();
+    load->move((wid_x - load->width())/2,(wid_y - load->height())/2);
+    QTimer::singleShot(3000, this, SLOT(endload()));  // 这里是一个3秒定时器， 且只执行一次。
+}
+
+void message_qemu::endload()
+{
+    load->close();
+}
+
+void message_qemu::on_pushButton_8_clicked()
+{
+    t1 = new test(this);
+    t1->show();
+    t1->move((wid_x - t1->width())/2,(wid_y - t1->height())/2);
+    QTimer::singleShot(3000, this, SLOT(endcompare()));  // 这里是一个3秒定时器， 且只执行一次。
+}
+
+void message_qemu::endcompare()
+{
+    t1->close();
+}
+
+void message_qemu::on_comboBox_currentIndexChanged(int index)
+{
+    switch (ui->comboBox->currentIndex()) {
+    case 0:
+        ui->textBrowser_2->clear();
+        break;
+
+
+
+    case 1:
+
+        ui->textBrowser_2->clear();
+        ui->textBrowser_2->append("G1023-DSAFJK-3GALKS-XZCVB-FADGG");
+
+
+        break;
+
+
+
+    case 2:
+
+
+        ui->textBrowser_2->clear();
+        ui->textBrowser_2->append("ADF12-AG34H-BNGAS-DSAGJ-VCNNF");
+
+        break;
+
+
+
 
     }
 }
 
+
+void message_qemu::on_readoutput()
+{
+    QString abc =caller->readAllStandardOutput();
+    qDebug() << "啊啊啊啊啊："<< abc ;
+    //qDebug() << abc ;   //将输出信息读取到编辑框
+}
+
+void message_qemu::on_readerror()
+{
+    //QMessageBox::information(0, "Error", cmd->readAllStandardError().data());    //弹出信息框提示错误信息
+}

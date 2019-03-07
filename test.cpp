@@ -14,7 +14,7 @@ test::test(QWidget *parent) :
     setAttribute(Qt::WA_TranslucentBackground);//背景透明
     setAttribute(Qt::WA_DeleteOnClose);//关闭窗体时销毁窗口 使得再次打开窗体gif动画重新播放
 
-    QMovie *movie= new QMovie(":/new/unit/pic/unit/sc_db.gif");
+    QMovie *movie= new QMovie(":/new/unit/pic/unit/downloading.gif");
     ui->label->setMovie(movie);
     movie->start();
 

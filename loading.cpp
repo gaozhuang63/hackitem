@@ -14,17 +14,7 @@ loading::loading(QWidget *parent) :
     setAttribute(Qt::WA_TranslucentBackground);//背景透明
     setAttribute(Qt::WA_DeleteOnClose);//关闭窗体时销毁窗口 使得再次打开窗体gif动画重新播放
 
-//    //屏幕居中显示
-//    int frmX = width();
-//    int frmY = height();
-//    QWidget w;
-//    int deskWidth = w.width();
-//    int deskHeight = w.height();
-//    QPoint movePoint(deskWidth / 2 - frmX / 2, deskHeight / 2 - frmY / 2);
-//    move(movePoint);
 
-//    QDesktopWidget* desktop = QApplication::desktop(); // =qApp->desktop();也可以
-//    move((desktop->width() - this->width())/2, (desktop->height() - this->height())/2);
 
     //加载gif图片
     movie = new QMovie(":/new/unit/pic/unit/downloading.gif");

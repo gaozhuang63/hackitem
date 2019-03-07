@@ -8,6 +8,7 @@
 #include <QVBoxLayout>
 #include "title_bar.h"
 #include <QApplication>
+#include <QProcess>
 
 #define TIMER_TIMEOUT   (0.08*1000)
 #define STOPTIME (0.1*1000)
@@ -98,6 +99,13 @@ void login::paintEvent(QPaintEvent *)
 //向message_qemu界面发送信号
 void login::on_pushButton_clicked()
 {
+
+
+
+
+
+
+
 
 
    // message_qemu *msg_qemu = new message_qemu(this);//新建子界面

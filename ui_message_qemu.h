@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCalendarWidget>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -35,7 +36,6 @@ public:
     QWidget *widget_3;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QLabel *label_6;
     QSpacerItem *horizontalSpacer;
     QWidget *widget_4;
     QVBoxLayout *verticalLayout_3;
@@ -136,22 +136,22 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QCalendarWidget *calendarWidget;
     QSpacerItem *horizontalSpacer_11;
-    QWidget *tab_4;
-    QVBoxLayout *verticalLayout_5;
-    QTabWidget *tabWidget;
     QWidget *tab;
-    QGridLayout *gridLayout_2;
-    QLabel *label_5;
-    QLabel *label_4;
-    QLabel *label_3;
-    QWidget *tab_2;
-    QGridLayout *gridLayout_4;
-    QWidget *tab_8;
-    QWidget *tab_9;
-    QWidget *tab_10;
-    QWidget *tab_11;
-    QWidget *tab_6;
-    QWidget *tab_7;
+    QHBoxLayout *horizontalLayout_18;
+    QWidget *widget_30;
+    QWidget *widget_29;
+    QHBoxLayout *horizontalLayout_15;
+    QSpacerItem *horizontalSpacer_18;
+    QTableWidget *tableWidget_7;
+    QWidget *widget_32;
+    QPushButton *RecButton;
+    QWidget *layoutWidget;
+    QHBoxLayout *horizontalLayout_16;
+    QPushButton *pushButton_7;
+    QPushButton *pushButton_8;
+    QWidget *widget_31;
+    QTextBrowser *textBrowser_2;
+    QComboBox *comboBox;
 
     void setupUi(QWidget *message_qemu)
     {
@@ -180,19 +180,12 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         label = new QLabel(widget_3);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setMinimumSize(QSize(445, 300));
-        label->setMaximumSize(QSize(445, 300));
+        label->setMinimumSize(QSize(200, 200));
+        label->setMaximumSize(QSize(200, 200));
         label->setPixmap(QPixmap(QString::fromUtf8(":/new/unit/pic/unit/hacked-2127635_1280.png")));
         label->setScaledContents(true);
 
         horizontalLayout->addWidget(label);
-
-        label_6 = new QLabel(widget_3);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setMinimumSize(QSize(0, 0));
-        label_6->setMaximumSize(QSize(445, 409));
-
-        horizontalLayout->addWidget(label_6);
 
         horizontalSpacer = new QSpacerItem(1147, 239, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -282,6 +275,18 @@ public:
         tableWidget->setVerticalHeaderItem(6, __qtablewidgetitem6);
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
         tableWidget->setVerticalHeaderItem(7, __qtablewidgetitem7);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        tableWidget->setItem(0, 0, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        tableWidget->setItem(0, 1, __qtablewidgetitem9);
+        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        tableWidget->setItem(1, 0, __qtablewidgetitem10);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        tableWidget->setItem(1, 1, __qtablewidgetitem11);
+        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
+        tableWidget->setItem(2, 0, __qtablewidgetitem12);
+        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
+        tableWidget->setItem(2, 1, __qtablewidgetitem13);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setMinimumSize(QSize(410, 300));
         tableWidget->setMaximumSize(QSize(410, 300));
@@ -333,22 +338,22 @@ public:
             tableWidget_2->setColumnCount(2);
         if (tableWidget_2->rowCount() < 8)
             tableWidget_2->setRowCount(8);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(0, __qtablewidgetitem8);
-        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(1, __qtablewidgetitem9);
-        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(2, __qtablewidgetitem10);
-        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(3, __qtablewidgetitem11);
-        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(4, __qtablewidgetitem12);
-        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(5, __qtablewidgetitem13);
         QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(6, __qtablewidgetitem14);
+        tableWidget_2->setVerticalHeaderItem(0, __qtablewidgetitem14);
         QTableWidgetItem *__qtablewidgetitem15 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(7, __qtablewidgetitem15);
+        tableWidget_2->setVerticalHeaderItem(1, __qtablewidgetitem15);
+        QTableWidgetItem *__qtablewidgetitem16 = new QTableWidgetItem();
+        tableWidget_2->setVerticalHeaderItem(2, __qtablewidgetitem16);
+        QTableWidgetItem *__qtablewidgetitem17 = new QTableWidgetItem();
+        tableWidget_2->setVerticalHeaderItem(3, __qtablewidgetitem17);
+        QTableWidgetItem *__qtablewidgetitem18 = new QTableWidgetItem();
+        tableWidget_2->setVerticalHeaderItem(4, __qtablewidgetitem18);
+        QTableWidgetItem *__qtablewidgetitem19 = new QTableWidgetItem();
+        tableWidget_2->setVerticalHeaderItem(5, __qtablewidgetitem19);
+        QTableWidgetItem *__qtablewidgetitem20 = new QTableWidgetItem();
+        tableWidget_2->setVerticalHeaderItem(6, __qtablewidgetitem20);
+        QTableWidgetItem *__qtablewidgetitem21 = new QTableWidgetItem();
+        tableWidget_2->setVerticalHeaderItem(7, __qtablewidgetitem21);
         tableWidget_2->setObjectName(QString::fromUtf8("tableWidget_2"));
         tableWidget_2->setMinimumSize(QSize(410, 300));
         tableWidget_2->setMaximumSize(QSize(410, 300));
@@ -398,22 +403,22 @@ public:
             tableWidget_3->setColumnCount(2);
         if (tableWidget_3->rowCount() < 8)
             tableWidget_3->setRowCount(8);
-        QTableWidgetItem *__qtablewidgetitem16 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(0, __qtablewidgetitem16);
-        QTableWidgetItem *__qtablewidgetitem17 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(1, __qtablewidgetitem17);
-        QTableWidgetItem *__qtablewidgetitem18 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(2, __qtablewidgetitem18);
-        QTableWidgetItem *__qtablewidgetitem19 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(3, __qtablewidgetitem19);
-        QTableWidgetItem *__qtablewidgetitem20 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(4, __qtablewidgetitem20);
-        QTableWidgetItem *__qtablewidgetitem21 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(5, __qtablewidgetitem21);
         QTableWidgetItem *__qtablewidgetitem22 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(6, __qtablewidgetitem22);
+        tableWidget_3->setVerticalHeaderItem(0, __qtablewidgetitem22);
         QTableWidgetItem *__qtablewidgetitem23 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(7, __qtablewidgetitem23);
+        tableWidget_3->setVerticalHeaderItem(1, __qtablewidgetitem23);
+        QTableWidgetItem *__qtablewidgetitem24 = new QTableWidgetItem();
+        tableWidget_3->setVerticalHeaderItem(2, __qtablewidgetitem24);
+        QTableWidgetItem *__qtablewidgetitem25 = new QTableWidgetItem();
+        tableWidget_3->setVerticalHeaderItem(3, __qtablewidgetitem25);
+        QTableWidgetItem *__qtablewidgetitem26 = new QTableWidgetItem();
+        tableWidget_3->setVerticalHeaderItem(4, __qtablewidgetitem26);
+        QTableWidgetItem *__qtablewidgetitem27 = new QTableWidgetItem();
+        tableWidget_3->setVerticalHeaderItem(5, __qtablewidgetitem27);
+        QTableWidgetItem *__qtablewidgetitem28 = new QTableWidgetItem();
+        tableWidget_3->setVerticalHeaderItem(6, __qtablewidgetitem28);
+        QTableWidgetItem *__qtablewidgetitem29 = new QTableWidgetItem();
+        tableWidget_3->setVerticalHeaderItem(7, __qtablewidgetitem29);
         tableWidget_3->setObjectName(QString::fromUtf8("tableWidget_3"));
         tableWidget_3->setMinimumSize(QSize(410, 300));
         tableWidget_3->setMaximumSize(QSize(410, 300));
@@ -471,22 +476,22 @@ public:
             tableWidget_4->setColumnCount(2);
         if (tableWidget_4->rowCount() < 8)
             tableWidget_4->setRowCount(8);
-        QTableWidgetItem *__qtablewidgetitem24 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(0, __qtablewidgetitem24);
-        QTableWidgetItem *__qtablewidgetitem25 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(1, __qtablewidgetitem25);
-        QTableWidgetItem *__qtablewidgetitem26 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(2, __qtablewidgetitem26);
-        QTableWidgetItem *__qtablewidgetitem27 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(3, __qtablewidgetitem27);
-        QTableWidgetItem *__qtablewidgetitem28 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(4, __qtablewidgetitem28);
-        QTableWidgetItem *__qtablewidgetitem29 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(5, __qtablewidgetitem29);
         QTableWidgetItem *__qtablewidgetitem30 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(6, __qtablewidgetitem30);
+        tableWidget_4->setVerticalHeaderItem(0, __qtablewidgetitem30);
         QTableWidgetItem *__qtablewidgetitem31 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(7, __qtablewidgetitem31);
+        tableWidget_4->setVerticalHeaderItem(1, __qtablewidgetitem31);
+        QTableWidgetItem *__qtablewidgetitem32 = new QTableWidgetItem();
+        tableWidget_4->setVerticalHeaderItem(2, __qtablewidgetitem32);
+        QTableWidgetItem *__qtablewidgetitem33 = new QTableWidgetItem();
+        tableWidget_4->setVerticalHeaderItem(3, __qtablewidgetitem33);
+        QTableWidgetItem *__qtablewidgetitem34 = new QTableWidgetItem();
+        tableWidget_4->setVerticalHeaderItem(4, __qtablewidgetitem34);
+        QTableWidgetItem *__qtablewidgetitem35 = new QTableWidgetItem();
+        tableWidget_4->setVerticalHeaderItem(5, __qtablewidgetitem35);
+        QTableWidgetItem *__qtablewidgetitem36 = new QTableWidgetItem();
+        tableWidget_4->setVerticalHeaderItem(6, __qtablewidgetitem36);
+        QTableWidgetItem *__qtablewidgetitem37 = new QTableWidgetItem();
+        tableWidget_4->setVerticalHeaderItem(7, __qtablewidgetitem37);
         tableWidget_4->setObjectName(QString::fromUtf8("tableWidget_4"));
         tableWidget_4->setMinimumSize(QSize(410, 300));
         tableWidget_4->setMaximumSize(QSize(410, 300));
@@ -537,22 +542,22 @@ public:
             tableWidget_5->setColumnCount(2);
         if (tableWidget_5->rowCount() < 8)
             tableWidget_5->setRowCount(8);
-        QTableWidgetItem *__qtablewidgetitem32 = new QTableWidgetItem();
-        tableWidget_5->setVerticalHeaderItem(0, __qtablewidgetitem32);
-        QTableWidgetItem *__qtablewidgetitem33 = new QTableWidgetItem();
-        tableWidget_5->setVerticalHeaderItem(1, __qtablewidgetitem33);
-        QTableWidgetItem *__qtablewidgetitem34 = new QTableWidgetItem();
-        tableWidget_5->setVerticalHeaderItem(2, __qtablewidgetitem34);
-        QTableWidgetItem *__qtablewidgetitem35 = new QTableWidgetItem();
-        tableWidget_5->setVerticalHeaderItem(3, __qtablewidgetitem35);
-        QTableWidgetItem *__qtablewidgetitem36 = new QTableWidgetItem();
-        tableWidget_5->setVerticalHeaderItem(4, __qtablewidgetitem36);
-        QTableWidgetItem *__qtablewidgetitem37 = new QTableWidgetItem();
-        tableWidget_5->setVerticalHeaderItem(5, __qtablewidgetitem37);
         QTableWidgetItem *__qtablewidgetitem38 = new QTableWidgetItem();
-        tableWidget_5->setVerticalHeaderItem(6, __qtablewidgetitem38);
+        tableWidget_5->setVerticalHeaderItem(0, __qtablewidgetitem38);
         QTableWidgetItem *__qtablewidgetitem39 = new QTableWidgetItem();
-        tableWidget_5->setVerticalHeaderItem(7, __qtablewidgetitem39);
+        tableWidget_5->setVerticalHeaderItem(1, __qtablewidgetitem39);
+        QTableWidgetItem *__qtablewidgetitem40 = new QTableWidgetItem();
+        tableWidget_5->setVerticalHeaderItem(2, __qtablewidgetitem40);
+        QTableWidgetItem *__qtablewidgetitem41 = new QTableWidgetItem();
+        tableWidget_5->setVerticalHeaderItem(3, __qtablewidgetitem41);
+        QTableWidgetItem *__qtablewidgetitem42 = new QTableWidgetItem();
+        tableWidget_5->setVerticalHeaderItem(4, __qtablewidgetitem42);
+        QTableWidgetItem *__qtablewidgetitem43 = new QTableWidgetItem();
+        tableWidget_5->setVerticalHeaderItem(5, __qtablewidgetitem43);
+        QTableWidgetItem *__qtablewidgetitem44 = new QTableWidgetItem();
+        tableWidget_5->setVerticalHeaderItem(6, __qtablewidgetitem44);
+        QTableWidgetItem *__qtablewidgetitem45 = new QTableWidgetItem();
+        tableWidget_5->setVerticalHeaderItem(7, __qtablewidgetitem45);
         tableWidget_5->setObjectName(QString::fromUtf8("tableWidget_5"));
         tableWidget_5->setMinimumSize(QSize(410, 300));
         tableWidget_5->setMaximumSize(QSize(410, 300));
@@ -603,22 +608,22 @@ public:
             tableWidget_6->setColumnCount(2);
         if (tableWidget_6->rowCount() < 8)
             tableWidget_6->setRowCount(8);
-        QTableWidgetItem *__qtablewidgetitem40 = new QTableWidgetItem();
-        tableWidget_6->setVerticalHeaderItem(0, __qtablewidgetitem40);
-        QTableWidgetItem *__qtablewidgetitem41 = new QTableWidgetItem();
-        tableWidget_6->setVerticalHeaderItem(1, __qtablewidgetitem41);
-        QTableWidgetItem *__qtablewidgetitem42 = new QTableWidgetItem();
-        tableWidget_6->setVerticalHeaderItem(2, __qtablewidgetitem42);
-        QTableWidgetItem *__qtablewidgetitem43 = new QTableWidgetItem();
-        tableWidget_6->setVerticalHeaderItem(3, __qtablewidgetitem43);
-        QTableWidgetItem *__qtablewidgetitem44 = new QTableWidgetItem();
-        tableWidget_6->setVerticalHeaderItem(4, __qtablewidgetitem44);
-        QTableWidgetItem *__qtablewidgetitem45 = new QTableWidgetItem();
-        tableWidget_6->setVerticalHeaderItem(5, __qtablewidgetitem45);
         QTableWidgetItem *__qtablewidgetitem46 = new QTableWidgetItem();
-        tableWidget_6->setVerticalHeaderItem(6, __qtablewidgetitem46);
+        tableWidget_6->setVerticalHeaderItem(0, __qtablewidgetitem46);
         QTableWidgetItem *__qtablewidgetitem47 = new QTableWidgetItem();
-        tableWidget_6->setVerticalHeaderItem(7, __qtablewidgetitem47);
+        tableWidget_6->setVerticalHeaderItem(1, __qtablewidgetitem47);
+        QTableWidgetItem *__qtablewidgetitem48 = new QTableWidgetItem();
+        tableWidget_6->setVerticalHeaderItem(2, __qtablewidgetitem48);
+        QTableWidgetItem *__qtablewidgetitem49 = new QTableWidgetItem();
+        tableWidget_6->setVerticalHeaderItem(3, __qtablewidgetitem49);
+        QTableWidgetItem *__qtablewidgetitem50 = new QTableWidgetItem();
+        tableWidget_6->setVerticalHeaderItem(4, __qtablewidgetitem50);
+        QTableWidgetItem *__qtablewidgetitem51 = new QTableWidgetItem();
+        tableWidget_6->setVerticalHeaderItem(5, __qtablewidgetitem51);
+        QTableWidgetItem *__qtablewidgetitem52 = new QTableWidgetItem();
+        tableWidget_6->setVerticalHeaderItem(6, __qtablewidgetitem52);
+        QTableWidgetItem *__qtablewidgetitem53 = new QTableWidgetItem();
+        tableWidget_6->setVerticalHeaderItem(7, __qtablewidgetitem53);
         tableWidget_6->setObjectName(QString::fromUtf8("tableWidget_6"));
         tableWidget_6->setMinimumSize(QSize(410, 300));
         tableWidget_6->setMaximumSize(QSize(410, 300));
@@ -933,68 +938,125 @@ public:
         verticalLayout_6->setStretch(0, 1);
         verticalLayout_6->setStretch(1, 2);
         tabWidget_2->addTab(tab_5, QString());
-        tab_4 = new QWidget();
-        tab_4->setObjectName(QString::fromUtf8("tab_4"));
-        verticalLayout_5 = new QVBoxLayout(tab_4);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        tabWidget = new QTabWidget(tab_4);
-        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setStyleSheet(QString::fromUtf8(""));
-        tabWidget->setTabPosition(QTabWidget::West);
-        tabWidget->setTabShape(QTabWidget::Rounded);
-        tabWidget->setElideMode(Qt::ElideNone);
-        tabWidget->setUsesScrollButtons(false);
-        tabWidget->setMovable(true);
-        tabWidget->setTabBarAutoHide(false);
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
-        gridLayout_2 = new QGridLayout(tab);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        label_5 = new QLabel(tab);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        horizontalLayout_18 = new QHBoxLayout(tab);
+        horizontalLayout_18->setObjectName(QString::fromUtf8("horizontalLayout_18"));
+        widget_30 = new QWidget(tab);
+        widget_30->setObjectName(QString::fromUtf8("widget_30"));
+        widget_29 = new QWidget(widget_30);
+        widget_29->setObjectName(QString::fromUtf8("widget_29"));
+        widget_29->setGeometry(QRect(100, 320, 470, 311));
+        widget_29->setMinimumSize(QSize(470, 0));
+        widget_29->setMaximumSize(QSize(470, 16777215));
+        horizontalLayout_15 = new QHBoxLayout(widget_29);
+        horizontalLayout_15->setSpacing(0);
+        horizontalLayout_15->setObjectName(QString::fromUtf8("horizontalLayout_15"));
+        horizontalLayout_15->setContentsMargins(0, 0, 0, 0);
+        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_2->addWidget(label_5, 0, 1, 1, 1);
+        horizontalLayout_15->addItem(horizontalSpacer_18);
 
-        label_4 = new QLabel(tab);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        tableWidget_7 = new QTableWidget(widget_29);
+        if (tableWidget_7->columnCount() < 2)
+            tableWidget_7->setColumnCount(2);
+        if (tableWidget_7->rowCount() < 8)
+            tableWidget_7->setRowCount(8);
+        QTableWidgetItem *__qtablewidgetitem54 = new QTableWidgetItem();
+        tableWidget_7->setVerticalHeaderItem(0, __qtablewidgetitem54);
+        QTableWidgetItem *__qtablewidgetitem55 = new QTableWidgetItem();
+        tableWidget_7->setVerticalHeaderItem(1, __qtablewidgetitem55);
+        QTableWidgetItem *__qtablewidgetitem56 = new QTableWidgetItem();
+        tableWidget_7->setVerticalHeaderItem(2, __qtablewidgetitem56);
+        QTableWidgetItem *__qtablewidgetitem57 = new QTableWidgetItem();
+        tableWidget_7->setVerticalHeaderItem(3, __qtablewidgetitem57);
+        QTableWidgetItem *__qtablewidgetitem58 = new QTableWidgetItem();
+        tableWidget_7->setVerticalHeaderItem(4, __qtablewidgetitem58);
+        QTableWidgetItem *__qtablewidgetitem59 = new QTableWidgetItem();
+        tableWidget_7->setVerticalHeaderItem(5, __qtablewidgetitem59);
+        QTableWidgetItem *__qtablewidgetitem60 = new QTableWidgetItem();
+        tableWidget_7->setVerticalHeaderItem(6, __qtablewidgetitem60);
+        QTableWidgetItem *__qtablewidgetitem61 = new QTableWidgetItem();
+        tableWidget_7->setVerticalHeaderItem(7, __qtablewidgetitem61);
+        tableWidget_7->setObjectName(QString::fromUtf8("tableWidget_7"));
+        tableWidget_7->setMinimumSize(QSize(410, 300));
+        tableWidget_7->setMaximumSize(QSize(410, 300));
+        tableWidget_7->setStyleSheet(QString::fromUtf8("QTableWidget{background-color: rgba(255,255,255,0);\n"
+"			 font: 25 10pt ;\n"
+"		     color: rgb(245, 22, 22);\n"
+"			 \n"
+"			}\"\n"
+"\n"
+""));
+        tableWidget_7->setShowGrid(false);
+        tableWidget_7->setColumnCount(2);
+        tableWidget_7->horizontalHeader()->setVisible(false);
+        tableWidget_7->horizontalHeader()->setDefaultSectionSize(200);
+        tableWidget_7->horizontalHeader()->setMinimumSectionSize(200);
+        tableWidget_7->verticalHeader()->setDefaultSectionSize(37);
+        tableWidget_7->verticalHeader()->setMinimumSectionSize(37);
 
-        gridLayout_2->addWidget(label_4, 1, 0, 1, 1);
+        horizontalLayout_15->addWidget(tableWidget_7);
 
-        label_3 = new QLabel(tab);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setMinimumSize(QSize(600, 400));
-        label_3->setMaximumSize(QSize(600, 400));
+        widget_32 = new QWidget(widget_30);
+        widget_32->setObjectName(QString::fromUtf8("widget_32"));
+        widget_32->setGeometry(QRect(30, 10, 571, 301));
+        RecButton = new QPushButton(widget_32);
+        RecButton->setObjectName(QString::fromUtf8("RecButton"));
+        RecButton->setGeometry(QRect(120, 110, 150, 150));
+        RecButton->setMinimumSize(QSize(150, 150));
+        RecButton->setMaximumSize(QSize(150, 150));
+        layoutWidget = new QWidget(widget_32);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(340, 160, 208, 52));
+        horizontalLayout_16 = new QHBoxLayout(layoutWidget);
+        horizontalLayout_16->setObjectName(QString::fromUtf8("horizontalLayout_16"));
+        horizontalLayout_16->setContentsMargins(0, 0, 0, 0);
+        pushButton_7 = new QPushButton(layoutWidget);
+        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
+        pushButton_7->setMinimumSize(QSize(100, 50));
+        pushButton_7->setMaximumSize(QSize(100, 50));
 
-        gridLayout_2->addWidget(label_3, 0, 0, 1, 1);
+        horizontalLayout_16->addWidget(pushButton_7);
 
-        tabWidget->addTab(tab, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QString::fromUtf8("tab_2"));
-        gridLayout_4 = new QGridLayout(tab_2);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        tabWidget->addTab(tab_2, QString());
-        tab_8 = new QWidget();
-        tab_8->setObjectName(QString::fromUtf8("tab_8"));
-        tabWidget->addTab(tab_8, QString());
-        tab_9 = new QWidget();
-        tab_9->setObjectName(QString::fromUtf8("tab_9"));
-        tabWidget->addTab(tab_9, QString());
-        tab_10 = new QWidget();
-        tab_10->setObjectName(QString::fromUtf8("tab_10"));
-        tabWidget->addTab(tab_10, QString());
-        tab_11 = new QWidget();
-        tab_11->setObjectName(QString::fromUtf8("tab_11"));
-        tabWidget->addTab(tab_11, QString());
+        pushButton_8 = new QPushButton(layoutWidget);
+        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
+        pushButton_8->setMinimumSize(QSize(100, 50));
+        pushButton_8->setMaximumSize(QSize(100, 50));
 
-        verticalLayout_5->addWidget(tabWidget);
+        horizontalLayout_16->addWidget(pushButton_8);
 
-        tabWidget_2->addTab(tab_4, QString());
-        tab_6 = new QWidget();
-        tab_6->setObjectName(QString::fromUtf8("tab_6"));
-        tabWidget_2->addTab(tab_6, QString());
-        tab_7 = new QWidget();
-        tab_7->setObjectName(QString::fromUtf8("tab_7"));
-        tabWidget_2->addTab(tab_7, QString());
+
+        horizontalLayout_18->addWidget(widget_30);
+
+        widget_31 = new QWidget(tab);
+        widget_31->setObjectName(QString::fromUtf8("widget_31"));
+        textBrowser_2 = new QTextBrowser(widget_31);
+        textBrowser_2->setObjectName(QString::fromUtf8("textBrowser_2"));
+        textBrowser_2->setGeometry(QRect(260, 70, 451, 221));
+        textBrowser_2->setStyleSheet(QString::fromUtf8("QTextBrowser{ \n"
+"background-color: rgb(255,132,139);\n"
+"border-radius:3px; \n"
+"color:rgb(0,0,0);\n"
+"font: 87 16pt \"Arial Black\";\n"
+"\n"
+"\n"
+"}\n"
+""));
+        comboBox = new QComboBox(widget_31);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(60, 160, 150, 30));
+        comboBox->setMinimumSize(QSize(150, 30));
+        comboBox->setMaximumSize(QSize(150, 30));
+
+        horizontalLayout_18->addWidget(widget_31);
+
+        horizontalLayout_18->setStretch(0, 1);
+        horizontalLayout_18->setStretch(1, 2);
+        tabWidget_2->addTab(tab, QString());
 
         verticalLayout_4->addWidget(tabWidget_2);
 
@@ -1010,7 +1072,6 @@ public:
         retranslateUi(message_qemu);
 
         tabWidget_2->setCurrentIndex(0);
-        tabWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(message_qemu);
@@ -1020,9 +1081,13 @@ public:
     {
         message_qemu->setWindowTitle(QApplication::translate("message_qemu", "Configure", nullptr));
         label->setText(QString());
-        label_6->setText(QApplication::translate("message_qemu", "TextLabel", nullptr));
         label_2->setText(QString());
         pushButton->setText(QApplication::translate("message_qemu", "Com1", nullptr));
+
+        const bool __sortingEnabled = tableWidget->isSortingEnabled();
+        tableWidget->setSortingEnabled(false);
+        tableWidget->setSortingEnabled(__sortingEnabled);
+
         pushButton_2->setText(QApplication::translate("message_qemu", "Com2", nullptr));
         pushButton_3->setText(QApplication::translate("message_qemu", "Com3", nullptr));
         pushButton_6->setText(QApplication::translate("message_qemu", "Com4", nullptr));
@@ -1045,19 +1110,15 @@ public:
         label_17->setText(QString());
         label_16->setText(QApplication::translate("message_qemu", "TextLabel", nullptr));
         label_22->setText(QString());
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_5), QApplication::translate("message_qemu", "\345\223\210", nullptr));
-        label_5->setText(QApplication::translate("message_qemu", "TextLabel", nullptr));
-        label_4->setText(QApplication::translate("message_qemu", "TextLabel", nullptr));
-        label_3->setText(QApplication::translate("message_qemu", "TextLabel", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("message_qemu", "RTA", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("message_qemu", "Configure", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_8), QApplication::translate("message_qemu", "\351\241\265", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_9), QApplication::translate("message_qemu", "\351\241\265", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_10), QApplication::translate("message_qemu", "\351\241\265", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_11), QApplication::translate("message_qemu", "\351\241\265", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_4), QApplication::translate("message_qemu", "Configure", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_6), QApplication::translate("message_qemu", "\345\230\277", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_7), QApplication::translate("message_qemu", "\345\220\274", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_5), QApplication::translate("message_qemu", "Configure", nullptr));
+        RecButton->setText(QApplication::translate("message_qemu", "COM", nullptr));
+        pushButton_7->setText(QApplication::translate("message_qemu", "\345\274\200\345\247\213\346\216\245\346\224\266", nullptr));
+        pushButton_8->setText(QApplication::translate("message_qemu", "\345\274\200\345\247\213\346\257\224\350\276\203", nullptr));
+        comboBox->setItemText(0, QString());
+        comboBox->setItemText(1, QApplication::translate("message_qemu", "GUID1", nullptr));
+        comboBox->setItemText(2, QApplication::translate("message_qemu", "GUID2", nullptr));
+
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QApplication::translate("message_qemu", "GUID", nullptr));
     } // retranslateUi
 
 };

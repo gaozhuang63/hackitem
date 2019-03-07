@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -23,34 +22,41 @@ class Ui_test
 public:
     QVBoxLayout *verticalLayout;
     QWidget *widget;
-    QHBoxLayout *horizontalLayout;
-    QWidget *widget_2;
-    QHBoxLayout *horizontalLayout_2;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *label_2;
     QLabel *label;
 
     void setupUi(QWidget *test)
     {
         if (test->objectName().isEmpty())
             test->setObjectName(QString::fromUtf8("test"));
-        test->resize(620, 318);
-        test->setMinimumSize(QSize(620, 318));
+        test->resize(550, 200);
+        test->setMinimumSize(QSize(550, 200));
+        test->setMaximumSize(QSize(568, 201));
         verticalLayout = new QVBoxLayout(test);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         widget = new QWidget(test);
         widget->setObjectName(QString::fromUtf8("widget"));
-        horizontalLayout = new QHBoxLayout(widget);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        widget_2 = new QWidget(widget);
-        widget_2->setObjectName(QString::fromUtf8("widget_2"));
-        horizontalLayout_2 = new QHBoxLayout(widget_2);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label = new QLabel(widget_2);
+        widget->setMinimumSize(QSize(550, 190));
+        widget->setMaximumSize(QSize(550, 190));
+        widget->setStyleSheet(QString::fromUtf8("background-color:rgb(199, 199, 199)"));
+        verticalLayout_2 = new QVBoxLayout(widget);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        label_2 = new QLabel(widget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setMinimumSize(QSize(500, 70));
+        label_2->setMaximumSize(QSize(500, 70));
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(179, 2, 5);\n"
+"font: 87 36pt \"Segoe UI Black\";"));
+
+        verticalLayout_2->addWidget(label_2);
+
+        label = new QLabel(widget);
         label->setObjectName(QString::fromUtf8("label"));
+        label->setMinimumSize(QSize(500, 113));
+        label->setMaximumSize(QSize(500, 113));
 
-        horizontalLayout_2->addWidget(label);
-
-
-        horizontalLayout->addWidget(widget_2);
+        verticalLayout_2->addWidget(label);
 
 
         verticalLayout->addWidget(widget);
@@ -64,6 +70,7 @@ public:
     void retranslateUi(QWidget *test)
     {
         test->setWindowTitle(QApplication::translate("test", "Form", nullptr));
+        label_2->setText(QApplication::translate("test", "<html><head/><body><p align=\"center\">Comparing...</p></body></html>", nullptr));
         label->setText(QApplication::translate("test", "TextLabel", nullptr));
     } // retranslateUi
 
