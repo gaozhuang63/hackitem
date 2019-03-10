@@ -17,6 +17,8 @@
 #include <QFile>
 #include <QTime>
 #include <QProcess>
+#include "loading_signal.h"
+#include "loading_signal2.h"
 
 //=====枚举标志信息类型，分别为登陆、消息、文件==============
 //enum MessageType{Login,Message,FileName,NONE};
@@ -47,12 +49,15 @@ public:
     int msg_y;
     QStringList config;
     loading *load;
+    Loading_Signal *load_sig;
+    loading_signal2 *load_sig2;
     test *t1;
     qintptr socketDescriptor;
     int choose;
     int wid_x;
     int wid_y;
     QByteArray ttt;
+
 
 
 public slots:
@@ -70,6 +75,7 @@ public slots:
     void on_readoutput();
     void on_readerror();
 
+
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_2_clicked();
@@ -86,6 +92,8 @@ private slots:
 
     void on_comboBox_currentIndexChanged(int index);
 
+    void on_pushButton_4_clicked();
+
 signals:
     void send_signal();//这个函数用户向主界面通知关闭的消息
     void pas_sig();
@@ -98,6 +106,7 @@ private:
     Ui::message_qemu *ui;
     QTimer *Timer;
     QProcess* caller;
+
 
 };
 

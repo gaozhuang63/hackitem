@@ -39,7 +39,13 @@ SOURCES += \
     loading.cpp \
     tcpserver.cpp \
     tcpsocket.cpp \
-    threadhandle.cpp
+    threadhandle.cpp \
+    ringsmapprogressbar.cpp \
+    animationprogressbar.cpp \
+    radiusprogressbar.cpp \
+    ringsprogressbar.cpp \
+    loading_signal.cpp \
+    loading_signal2.cpp
 
 HEADERS += \
         widget.h \
@@ -54,7 +60,13 @@ HEADERS += \
     loading.h \
     tcpserver.h \
     tcpsocket.h \
-    threadhandle.h
+    threadhandle.h \
+    ringsmapprogressbar.h \
+    animationprogressbar.h \
+    radiusprogressbar.h \
+    ringsprogressbar.h \
+    loading_signal.h \
+    loading_signal2.h
 
 FORMS += \
         widget.ui \
@@ -64,7 +76,10 @@ FORMS += \
     dlgwait.ui \
     dlgwait_1.ui \
     test.ui \
-    loading.ui
+    loading.ui \
+    ringsmapprogressbar.ui \
+    loading_signal.ui \
+    loading_signal2.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

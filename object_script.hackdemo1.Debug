@@ -12,6 +12,12 @@ debug/loading.o
 debug/tcpserver.o
 debug/tcpsocket.o
 debug/threadhandle.o
+debug/ringsmapprogressbar.o
+debug/animationprogressbar.o
+debug/radiusprogressbar.o
+debug/ringsprogressbar.o
+debug/loading_signal.o
+debug/loading_signal2.o
 debug/qrc_picture.o
 debug/moc_widget.o
 debug/moc_message_qemu.o
@@ -24,3 +30,9 @@ debug/moc_test.o
 debug/moc_loading.o
 debug/moc_tcpserver.o
 debug/moc_tcpsocket.o
+debug/moc_ringsmapprogressbar.o
+debug/moc_animationprogressbar.o
+debug/moc_radiusprogressbar.o
+debug/moc_ringsprogressbar.o
+debug/moc_loading_signal.o
+debug/moc_loading_signal2.o

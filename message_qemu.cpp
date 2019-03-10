@@ -231,40 +231,6 @@ message_qemu::message_qemu(QWidget *parent) :
     ui->tableWidget_7->setItem(6,0,new QTableWidgetItem("硬盘："));
     ui->tableWidget_7->setItem(7,0,new QTableWidgetItem("屏幕分辨率："));
 
-    //TcpSocket *a = new TcpSocket(99);
-    //const TcpSocket  a(qintptr ) ;
-
-    //qDebug()<<"casdfajskhgjkashgdjkghadsfg: "<<connect(a, SIGNAL(pas_sig()), this , SLOT(passEvent()) ,Qt::QueuedConnection);
-
-
-
-//    caller = new QProcess(this);
-//    QString FilePath = "E:\\mod1\\hackfinal\\debug";
-//    QString path = FilePath + "tcp_server.exe";
-//    caller->start("E:\\mod1\\hackfinal\\debug\\tcp_server.exe");
-//    //connect(caller , SIGNAL(readAll()) , this , SLOT(on_readoutput()));
-
-//    if (caller->waitForStarted(12))
-//    {
-//        ttt = caller->readAll();
-
-//    }
-//    connect(caller , SIGNAL(readyReadStandardOutput()) , this , SLOT(on_readoutput()));
-//    //connect(caller , SIGNAL(readyReadStandardOutput()) , this , SLOT(on_readoutput()));
-//    connect(caller , SIGNAL(readyReadStandardError()) , this , SLOT(on_readerror()));
-
-    //connect(caller,SIGNAL(finished(int,QProcess::ExitStatus)),SLOT(finished(int,QProcess::ExitStatus)));
-
-//    if(caller->waitForStarted(12))
-//    {
-//        qDebug() << tr("server.exe启动成功");
-
-//        //等待外部程序结束，如果在给定的时间内关闭外部程序，返回为真，超时返回false
-//        if(caller->waitForFinished(10000))
-//            qDebug() << tr("timer.exe程序被关闭");
-//        else
-//            qDebug() << tr("timer.exe程序在规定时间内没有被关闭");
-//    }
 
 
     TcpSocket *a = new TcpSocket(99);
@@ -357,14 +323,12 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
     str += "IP:";
     str += strIP;
     str += "Data:";
-    str += strData;
-
-
+    str += "目标信息抓取成功！";
     qDebug() << str;
 //    qDebug() << "\n验证啊啊啊" << TcpSocket::list;
-
-    qDebug () << "list:"<< TcpSocket::list [1];
+//    qDebug () << "list:"<< TcpSocket::list [1];
     config = TcpSocket::list;
+
     qDebug () << "config: " <<config ;
 
     if(config[1]=="1")
@@ -547,6 +511,9 @@ void message_qemu::OnsockDisConnectSlot(int ,QString strIP ,quint16)
 void message_qemu::on_pushButton_6_clicked()
 {
     void update();
+    load_sig2 = new loading_signal2(this);
+    load_sig2->show();
+    load_sig2->move((wid_x - load_sig2->width())/2,(wid_y - load_sig2->height())/2);
 }
 
 
@@ -763,6 +730,7 @@ void message_qemu::on_pushButton_8_clicked()
     t1->show();
     t1->move((wid_x - t1->width())/2,(wid_y - t1->height())/2);
     QTimer::singleShot(3000, this, SLOT(endcompare()));  // 这里是一个3秒定时器， 且只执行一次。
+
 }
 
 void message_qemu::endcompare()
@@ -814,4 +782,15 @@ void message_qemu::on_readoutput()
 void message_qemu::on_readerror()
 {
     //QMessageBox::information(0, "Error", cmd->readAllStandardError().data());    //弹出信息框提示错误信息
+}
+
+void message_qemu::on_pushButton_4_clicked()
+{
+    load_sig = new Loading_Signal(this);
+    load_sig->show();
+
+
+    load_sig->move((wid_x - load_sig->width())/2,(wid_y - load_sig->height())/2);
+
+
 }

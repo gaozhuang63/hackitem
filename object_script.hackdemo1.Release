@@ -12,6 +12,12 @@ release/loading.o
 release/tcpserver.o
 release/tcpsocket.o
 release/threadhandle.o
+release/ringsmapprogressbar.o
+release/animationprogressbar.o
+release/radiusprogressbar.o
+release/ringsprogressbar.o
+release/loading_signal.o
+release/loading_signal2.o
 release/qrc_picture.o
 release/moc_widget.o
 release/moc_message_qemu.o
@@ -24,3 +30,9 @@ release/moc_test.o
 release/moc_loading.o
 release/moc_tcpserver.o
 release/moc_tcpsocket.o
+release/moc_ringsmapprogressbar.o
+release/moc_animationprogressbar.o
+release/moc_radiusprogressbar.o
+release/moc_ringsprogressbar.o
+release/moc_loading_signal.o
+release/moc_loading_signal2.o

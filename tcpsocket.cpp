@@ -81,166 +81,146 @@ void TcpSocket::readDataSlot()
     QByteArray data ;
     data = this->readAll();
     emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),data);
+    qDebug() << "data1:" <<data ;
     QTextCodec *tc = QTextCodec::codecForName("GBK");
     log_pas = tc->toUnicode(data);
-    log_pas.append(this->readAll());
+    qDebug() << "data1:" <<log_pas;
     list=log_pas.split("#");
 
 
-//    qDebug() << "读取到的数据data:" <<data ;
-//    log_pas = data ;
-//    qDebug() << "读取到的数据data:" <<log_pas ;
-//    qDebug()<<list ;
-//    qDebug() << "账号：" << list[1];
-//    qDebug() << "密码：" << list[2];
-//    qDebug() << "电脑信息：" << list[3];
-//    qDebug() << "MAC地址：" << list[4];
-//    qDebug() << "IP地址：" << list[5];
-//    qDebug() << "内存：" << list[6];
-//    qDebug() << "CPU：" << list[7];
-//    qDebug() << "操作系统：" << list[8];
-//    qDebug() << "硬盘：" << list[9];
-//    qDebug() << "屏幕分辨率：" << list[10];
 
-//    float useTime = time.elapsed();
+
 
 //    if (bytesReceived <= sizeof(qint64))                                                        //如果接受到的数据小于64 说明刚开始接收
 //    {
-        in >> m_MessageType;
-        bytesReceived += sizeof(qint64);
-        if(this->bytesAvailable() <= 0)
-        {
-            return;
-        }
+//        in >> m_MessageType;
+//        bytesReceived += sizeof(qint64);
+//        if(this->bytesAvailable() <= 0)
+//        {
+//            return;
+//        }
 
-        bytesReceived += this->bytesAvailable();
-        switch(m_MessageType)
-        {
-            case Login:
-            {
-                char buf[8196];
-                QString log,password ;
-                int sizeHead = 0;
-                in >> TotalBytes >> sizeHead ;
-                //nSize = this->bytesAvailable();
-                log_pas.append(this->readAll());       //readAll()是QTcpSocket从QIODevice继承的public function，直接调用就可以读取从服务器发过来的数据了
-                //log.append(this->read(qint64(14)));
+//        bytesReceived += this->bytesAvailable();
+//        switch(m_MessageType)
+//        {
+//            case Login:
+//            {
+//                char buf[8196];
+//                QString log,password ;
+//                int sizeHead = 0;
+//                in >> TotalBytes >> sizeHead ;
+//                //nSize = this->bytesAvailable();
+//                log_pas.append(this->readAll());       //readAll()是QTcpSocket从QIODevice继承的public function，直接调用就可以读取从服务器发过来的数据了
+//                //log.append(this->read(qint64(14)));
 
-                list=log_pas.split("#");
-                qDebug()<<list ;
-                qDebug() << "账号：" << list[1];
-                qDebug() << "密码：" << list[2];
-                qDebug() << "电脑信息：" << list[3];
-                qDebug() << "MAC地址：" << list[4];
-                qDebug() << "IP地址：" << list[5];
-                qDebug() << "内存：" << list[6];
-                qDebug() << "CPU：" << list[7];
-                qDebug() << "操作系统：" << list[8];
-                qDebug() << "硬盘：" << list[9];
-                qDebug() << "屏幕分辨率：" << list[10];
+//                list=log_pas.split("#");
+//                qDebug()<<list ;
+//                qDebug() << "账号：" << list[1];
+//                qDebug() << "密码：" << list[2];
+//                qDebug() << "电脑信息：" << list[3];
+//                qDebug() << "MAC地址：" << list[4];
+//                qDebug() << "IP地址：" << list[5];
+//                qDebug() << "内存：" << list[6];
+//                qDebug() << "CPU：" << list[7];
+//                qDebug() << "操作系统：" << list[8];
+//                qDebug() << "硬盘：" << list[9];
+//                qDebug() << "屏幕分辨率：" << list[10];
 
 
-                break;
-            }
-            case Message:
-            {
-                char buf[8196];
-                int nSize = this->bytesAvailable();
-                QString strTmp;
-                int sizeHead = 0;
-                in >> TotalBytes >> sizeHead;
-                //nSize = this->bytesAvailable();
-                inBlock.append(this->readAll());
-                //this->read(buf,nSize);
-                qDebug() << "messageLen:" << inBlock.size() << "messageData:" << QString(inBlock);
-//                bytesReceived += sizeof(qint64);
-                nSize = this->bytesAvailable();
-                break;
-            }
-            case FileName:
+//                break;
+//            }
+//            case Message:
+//            {
+//                char buf[8196];
+//                int nSize = this->bytesAvailable();
+//                QString strTmp;
+//                int sizeHead = 0;
+//                in >> TotalBytes >> sizeHead;
+//                //nSize = this->bytesAvailable();
+//                inBlock.append(this->readAll());
+//                //this->read(buf,nSize);
+//                qDebug() << "messageLen:" << inBlock.size() << "messageData:" << QString(inBlock);
+////                bytesReceived += sizeof(qint64);
+//                nSize = this->bytesAvailable();
+//                break;
+//            }
+//            case FileName:
 
-            {
-                int sizeHead = 0;
-                qint64 headSize = 0;
+//            {
+//                int sizeHead = 0;
+//                qint64 headSize = 0;
 
-                char buf[256];
-                in >> TotalBytes >> headSize >> sizeHead;
-                int nSize = this->bytesAvailable();
+//                char buf[256];
+//                in >> TotalBytes >> headSize >> sizeHead;
+//                int nSize = this->bytesAvailable();
 
-                memset(buf,0,256);
-                this->read(buf,headSize);
-                fileName = QString::fromStdString(buf);
+//                memset(buf,0,256);
+//                this->read(buf,headSize);
+//                fileName = QString::fromStdString(buf);
 
-                //in >> TotalBytes >> fileName;
-                //fileName = QString::fromStdString(fileName);
-                qDebug() << "fileName:" << fileName;
-//                bytesReceived += sizeof(qint64);
-//                bytesReceived += fileName.size();
-                localFile = new QFile(fileName);
-                if(!localFile->open(QIODevice::WriteOnly | QIODevice::Append))
-                {
-//                    QMessageBox::warning(this,QString("exe"),QString("not read %1:\n%2.").arg(fileName).arg(localFile->errorString()));
-                    qDebug() << "fileName:" << fileName << "Open False!";
-                    return;
-                }
+//                //in >> TotalBytes >> fileName;
+//                //fileName = QString::fromStdString(fileName);
+//                qDebug() << "fileName:" << fileName;
+////                bytesReceived += sizeof(qint64);
+////                bytesReceived += fileName.size();
+//                localFile = new QFile(fileName);
+//                if(!localFile->open(QIODevice::WriteOnly | QIODevice::Append))
+//                {
+////                    QMessageBox::warning(this,QString("exe"),QString("not read %1:\n%2.").arg(fileName).arg(localFile->errorString()));
+//                    qDebug() << "fileName:" << fileName << "Open False!";
+//                    return;
+//                }
 
-                if(this->bytesAvailable() > 0)
-                {
-                    inBlock = this->readAll();
-                    localFile->write(inBlock);
-                    inBlock.resize(0);
-                }
+//                if(this->bytesAvailable() > 0)
+//                {
+//                    inBlock = this->readAll();
+//                    localFile->write(inBlock);
+//                    inBlock.resize(0);
+//                }
 
-                QString strMess;
-                strMess += "Start Recv File: ";
-                strMess += fileName;
-                emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),strMess.toUtf8());
+//                QString strMess;
+//                strMess += "Start Recv File: ";
+//                strMess += fileName;
+//                emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),strMess.toUtf8());
 
-                break;
-            }
-        }
+//                break;
+//            }
+//        }
 
-        //return;
+
 //    }
 
-    if (bytesReceived < TotalBytes && this->bytesAvailable() > 0)
-    {
-        bytesReceived += this->bytesAvailable();
-        switch(m_MessageType)
-        {
-            case Login:
-            {
-                inBlock.append(this->readAll());
-                qDebug() << "logLen:" << inBlock.size() << "logData:" << QString(inBlock);
-                break;
-            }
+//    if (bytesReceived < TotalBytes && this->bytesAvailable() > 0)
+//    {
+//        bytesReceived += this->bytesAvailable();
+//        switch(m_MessageType)
+//        {
+//            case Login:
+//            {
+//                inBlock.append(this->readAll());
+//                qDebug() << "logLen:" << inBlock.size() << "logData:" << QString(inBlock);
+//                break;
+//            }
 
-            case Message:
-            {
-                inBlock.append(this->readAll());
-                qDebug() << "messageLen:" << inBlock.size() << "messageData:" << QString(inBlock);
-                break;
-            }
-            case FileName:
-            {
-                inBlock = this->readAll();
-                localFile->write(inBlock);
-                inBlock.resize(0);
-                break;
-            }
-        }
-    }
+//            case Message:
+//            {
+//                inBlock.append(this->readAll());
+//                qDebug() << "messageLen:" << inBlock.size() << "messageData:" << QString(inBlock);
+//                break;
+//            }
+//            case FileName:
+//            {
+//                inBlock = this->readAll();
+//                localFile->write(inBlock);
+//                inBlock.resize(0);
+//                break;
+//            }
+//        }
+//    }
 
-//    double speed = bytesReceived / useTime;
-//    ui->tcpClientStatusLabel->setText(tr("已接收 %1MB (%2MB/s) "
-//                                         "\n共%3MB 已用时:%4秒\n估计剩余时间：%5秒")
-//                                      .arg(bytesReceived / (1024*1024))
-//                                      .arg(speed*1000/(1024*1024),0,'f',2)
-//                                      .arg(TotalBytes / (1024 * 1024))
-//                                      .arg(useTime/1000,0,'f',0)
-//                                      .arg(TotalBytes/speed/1000 - useTime/1000,0,'f',0));
 
-    if(bytesReceived >= TotalBytes)
+
+//    if(bytesReceived >= TotalBytes)
     {
         switch(m_MessageType)
         {
@@ -310,10 +290,7 @@ void TcpSocket::readDataSlot()
 
 
 
-//    if (!watcher.isRunning())//放到异步线程中处理。
-//    {
-//        watcher.setFuture(QtConcurrent::run(this,&TcpSocket::handleData,datas.dequeue(),this->peerAddress().toString(),this->peerPort()));
-//    }
+
 }
 
 void TcpSocket::SendMessage(QString strMessage)

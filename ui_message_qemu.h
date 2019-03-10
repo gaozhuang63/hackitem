@@ -1071,7 +1071,7 @@ public:
 
         retranslateUi(message_qemu);
 
-        tabWidget_2->setCurrentIndex(0);
+        tabWidget_2->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(message_qemu);
