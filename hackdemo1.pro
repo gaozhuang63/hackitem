@@ -45,7 +45,8 @@ SOURCES += \
     radiusprogressbar.cpp \
     ringsprogressbar.cpp \
     loading_signal.cpp \
-    loading_signal2.cpp
+    loading_signal2.cpp \
+    msgbox.cpp
 
 HEADERS += \
         widget.h \
@@ -66,7 +67,8 @@ HEADERS += \
     radiusprogressbar.h \
     ringsprogressbar.h \
     loading_signal.h \
-    loading_signal2.h
+    loading_signal2.h \
+    msgbox.h
 
 FORMS += \
         widget.ui \

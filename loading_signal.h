@@ -17,6 +17,8 @@ class Loading_Signal : public QWidget
 public:
     explicit Loading_Signal(QWidget *parent = nullptr);
     ~Loading_Signal();
+signals:
+    void success_signal();
 
 public slots:
     void updateProgressbar();

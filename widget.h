@@ -9,6 +9,7 @@
 #include "dlgwait.h"
 #include "dlgwait_1.h"
 #include "fitwindow.h"
+#include "qparallelanimationgroup.h"
 
 namespace Ui {
 class Widget;
@@ -24,7 +25,7 @@ public:
     void paintEvent(QPaintEvent *);
     void ConvertImageToTransparent(QPixmap qPixmap);
     void resetGrid(QWidget *widget,double factorx,double factory);
-
+    void initAnimation();
 
     QMovie *movie;
     QMovie *movie_1;

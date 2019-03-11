@@ -32,6 +32,7 @@
         <file>pic/icon/warning.png</file>
         <file>pic/icon/data.png</file>
         <file>pic/icon/firewall.png</file>
+        <file>pic/icon/success.png</file>
     </qresource>
     <qresource prefix="/new/unit">
         <file>pic/unit/hash.gif</file>
@@ -53,6 +54,7 @@
         <file>pic/unit/skull-and-crossbones-1518822_1920.jpg</file>
         <file>pic/unit/tech-1.jpg</file>
         <file>pic/unit/LOHO.png</file>
+        <file>pic/resource/huaji.jpg</file>
     </qresource>
     <qresource prefix="/new/resource">
         <file>pic/resource/progress_back.png</file>

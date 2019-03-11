@@ -23,13 +23,13 @@ void RadiusProgressBar::paintEvent(QPaintEvent *)
     QPixmap fillMap = QPixmap(":/new/resource/pic/resource/radius_front.png");
 
     //画进度条
-    p.drawPixmap(rect, buttomMap);
+    //p.drawPixmap(rect, buttomMap);                        //底下白色的进度条
     p.drawPixmap(fillRect, fillMap, fillRect);
 
     //画文字
     QFont f = QFont("Microsoft YaHei", 15, QFont::Bold);
     p.setFont(f);
     p.setPen(QColor("#555555"));
-    p.drawText(textRect, Qt::AlignCenter, valueStr);
+    //p.drawText(textRect, Qt::AlignCenter, valueStr);
 }
 

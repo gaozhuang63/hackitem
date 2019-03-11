@@ -45,6 +45,7 @@ void Loading_Signal::updateProgressbar()
          m_persent += 7;
          if(m_persent >= 100){
              m_persent = 100;
+             emit success_signal();
              this->close();
          }
     }

@@ -19,6 +19,9 @@
 #include <QProcess>
 #include "loading_signal.h"
 #include "loading_signal2.h"
+#include "mylabel.h"
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 
 //=====枚举标志信息类型，分别为登陆、消息、文件==============
 //enum MessageType{Login,Message,FileName,NONE};
@@ -30,7 +33,7 @@ class message_qemu;
 }
 
 
-
+class MyLabel;
 class message_qemu : public QWidget
 {
     Q_OBJECT
@@ -41,6 +44,7 @@ public:
     void paintEvent(QPaintEvent *);
 
     void Recputton();
+
     QMovie *movie;
     QMovie *movie_1;
     QMovie *movie_2;
@@ -48,6 +52,13 @@ public:
     int msg_x;
     int msg_y;
     QStringList config;
+    QStringList guid;
+    QStringList no1;
+    QStringList no2;
+    QStringList no3;
+    QStringList no4;
+    QStringList no5;
+    QStringList no6;
     loading *load;
     Loading_Signal *load_sig;
     loading_signal2 *load_sig2;
@@ -74,7 +85,10 @@ public slots:
     void endcompare();
     void on_readoutput();
     void on_readerror();
-
+    void show_guid();
+    void showBox();
+    void updateProgressbar();
+    void updateProgressbar2();
 
 private slots:
     void on_pushButton_clicked();
@@ -94,6 +108,18 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_12_clicked();
+
+    void on_pushButton_13_clicked();
+
+    void on_pushButton_14_clicked();
+
 signals:
     void send_signal();//这个函数用户向主界面通知关闭的消息
     void pas_sig();
@@ -107,6 +133,13 @@ private:
     QTimer *Timer;
     QProcess* caller;
 
+    QTimer *m_timer;
+    int m_persent;
+    int m_persent2;
+
+
+    RingsMapProgressbar *m_progressbar2;
+    QVector<MyLabel*> m_labelArray;
 
 };
 

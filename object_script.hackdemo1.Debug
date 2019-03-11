@@ -18,6 +18,7 @@ debug/radiusprogressbar.o
 debug/ringsprogressbar.o
 debug/loading_signal.o
 debug/loading_signal2.o
+debug/msgbox.o
 debug/qrc_picture.o
 debug/moc_widget.o
 debug/moc_message_qemu.o
@@ -36,3 +37,4 @@ debug/moc_radiusprogressbar.o
 debug/moc_ringsprogressbar.o
 debug/moc_loading_signal.o
 debug/moc_loading_signal2.o
+debug/moc_msgbox.o

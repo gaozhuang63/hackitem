@@ -14,6 +14,7 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QTime>
+#include <QPropertyAnimation>
 
 #define STOPTIME (0.1*1000)
 
@@ -236,15 +237,19 @@ Dialog::~Dialog()  //Dialog类的析构函数里面不知道写什么，就没�
 //下面这是提示框隐藏
 void Widget::slotHideFinishedLabel()
 {
-
+    //地图界面
     login *login_log = new login();
     login_log->show();//子界面出现
-   // login_log->showFullScreen();
     connect(login_log,SIGNAL(send_signal()),this,SLOT(reshow()));//当点击子界面时，调用主界面的reshow()函数
+//    message_qemu *a= new message_qemu();
+//    a->show();
     QTime currTime = QTime::currentTime();
     QTime dieTime = currTime.addMSecs(STOPTIME);       //延时显示 防止闪屏
     while( QTime::currentTime() < dieTime )
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+
+
+
     this->hide();//主界面隐藏
 
 }

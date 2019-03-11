@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_message_qemu_t {
-    QByteArrayData data[28];
-    char stringdata0[442];
+    QByteArrayData data[38];
+    char stringdata0[646];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,17 +48,27 @@ QT_MOC_LITERAL(13, 160, 7), // "endload"
 QT_MOC_LITERAL(14, 168, 10), // "endcompare"
 QT_MOC_LITERAL(15, 179, 13), // "on_readoutput"
 QT_MOC_LITERAL(16, 193, 12), // "on_readerror"
-QT_MOC_LITERAL(17, 206, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(18, 228, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(19, 252, 19), // "OnConnectClientSlot"
-QT_MOC_LITERAL(20, 272, 14), // "OnReadDataSlot"
-QT_MOC_LITERAL(21, 287, 20), // "OnsockDisConnectSlot"
-QT_MOC_LITERAL(22, 308, 23), // "on_pushButton_6_clicked"
-QT_MOC_LITERAL(23, 332, 23), // "on_pushButton_7_clicked"
-QT_MOC_LITERAL(24, 356, 23), // "on_pushButton_8_clicked"
-QT_MOC_LITERAL(25, 380, 31), // "on_comboBox_currentIndexChanged"
-QT_MOC_LITERAL(26, 412, 5), // "index"
-QT_MOC_LITERAL(27, 418, 23) // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(17, 206, 9), // "show_guid"
+QT_MOC_LITERAL(18, 216, 7), // "showBox"
+QT_MOC_LITERAL(19, 224, 17), // "updateProgressbar"
+QT_MOC_LITERAL(20, 242, 18), // "updateProgressbar2"
+QT_MOC_LITERAL(21, 261, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(22, 283, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(23, 307, 19), // "OnConnectClientSlot"
+QT_MOC_LITERAL(24, 327, 14), // "OnReadDataSlot"
+QT_MOC_LITERAL(25, 342, 20), // "OnsockDisConnectSlot"
+QT_MOC_LITERAL(26, 363, 23), // "on_pushButton_6_clicked"
+QT_MOC_LITERAL(27, 387, 23), // "on_pushButton_7_clicked"
+QT_MOC_LITERAL(28, 411, 23), // "on_pushButton_8_clicked"
+QT_MOC_LITERAL(29, 435, 31), // "on_comboBox_currentIndexChanged"
+QT_MOC_LITERAL(30, 467, 5), // "index"
+QT_MOC_LITERAL(31, 473, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(32, 497, 23), // "on_pushButton_9_clicked"
+QT_MOC_LITERAL(33, 521, 24), // "on_pushButton_10_clicked"
+QT_MOC_LITERAL(34, 546, 24), // "on_pushButton_11_clicked"
+QT_MOC_LITERAL(35, 571, 24), // "on_pushButton_12_clicked"
+QT_MOC_LITERAL(36, 596, 24), // "on_pushButton_13_clicked"
+QT_MOC_LITERAL(37, 621, 24) // "on_pushButton_14_clicked"
 
     },
     "message_qemu\0send_signal\0\0pas_sig\0"
@@ -67,12 +77,19 @@ QT_MOC_LITERAL(27, 418, 23) // "on_pushButton_4_clicked"
     "handleTimeout4\0handleTimeout5\0"
     "handleTimeoutRec\0passEvent\0endload\0"
     "endcompare\0on_readoutput\0on_readerror\0"
-    "on_pushButton_clicked\0on_pushButton_2_clicked\0"
-    "OnConnectClientSlot\0OnReadDataSlot\0"
-    "OnsockDisConnectSlot\0on_pushButton_6_clicked\0"
-    "on_pushButton_7_clicked\0on_pushButton_8_clicked\0"
+    "show_guid\0showBox\0updateProgressbar\0"
+    "updateProgressbar2\0on_pushButton_clicked\0"
+    "on_pushButton_2_clicked\0OnConnectClientSlot\0"
+    "OnReadDataSlot\0OnsockDisConnectSlot\0"
+    "on_pushButton_6_clicked\0on_pushButton_7_clicked\0"
+    "on_pushButton_8_clicked\0"
     "on_comboBox_currentIndexChanged\0index\0"
-    "on_pushButton_4_clicked"
+    "on_pushButton_4_clicked\0on_pushButton_9_clicked\0"
+    "on_pushButton_10_clicked\0"
+    "on_pushButton_11_clicked\0"
+    "on_pushButton_12_clicked\0"
+    "on_pushButton_13_clicked\0"
+    "on_pushButton_14_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -82,7 +99,7 @@ static const uint qt_meta_data_message_qemu[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      25,   14, // methods
+      35,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -90,33 +107,43 @@ static const uint qt_meta_data_message_qemu[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  139,    2, 0x06 /* Public */,
-       3,    0,  140,    2, 0x06 /* Public */,
+       1,    0,  189,    2, 0x06 /* Public */,
+       3,    0,  190,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,  141,    2, 0x0a /* Public */,
-       5,    0,  142,    2, 0x0a /* Public */,
-       6,    0,  143,    2, 0x0a /* Public */,
-       7,    0,  144,    2, 0x0a /* Public */,
-       8,    0,  145,    2, 0x0a /* Public */,
-       9,    0,  146,    2, 0x0a /* Public */,
-      10,    0,  147,    2, 0x0a /* Public */,
-      11,    0,  148,    2, 0x0a /* Public */,
-      12,    0,  149,    2, 0x0a /* Public */,
-      13,    0,  150,    2, 0x0a /* Public */,
-      14,    0,  151,    2, 0x0a /* Public */,
-      15,    0,  152,    2, 0x0a /* Public */,
-      16,    0,  153,    2, 0x0a /* Public */,
-      17,    0,  154,    2, 0x08 /* Private */,
-      18,    0,  155,    2, 0x08 /* Private */,
-      19,    3,  156,    2, 0x08 /* Private */,
-      20,    4,  163,    2, 0x08 /* Private */,
-      21,    3,  172,    2, 0x08 /* Private */,
-      22,    0,  179,    2, 0x08 /* Private */,
-      23,    0,  180,    2, 0x08 /* Private */,
-      24,    0,  181,    2, 0x08 /* Private */,
-      25,    1,  182,    2, 0x08 /* Private */,
-      27,    0,  185,    2, 0x08 /* Private */,
+       4,    0,  191,    2, 0x0a /* Public */,
+       5,    0,  192,    2, 0x0a /* Public */,
+       6,    0,  193,    2, 0x0a /* Public */,
+       7,    0,  194,    2, 0x0a /* Public */,
+       8,    0,  195,    2, 0x0a /* Public */,
+       9,    0,  196,    2, 0x0a /* Public */,
+      10,    0,  197,    2, 0x0a /* Public */,
+      11,    0,  198,    2, 0x0a /* Public */,
+      12,    0,  199,    2, 0x0a /* Public */,
+      13,    0,  200,    2, 0x0a /* Public */,
+      14,    0,  201,    2, 0x0a /* Public */,
+      15,    0,  202,    2, 0x0a /* Public */,
+      16,    0,  203,    2, 0x0a /* Public */,
+      17,    0,  204,    2, 0x0a /* Public */,
+      18,    0,  205,    2, 0x0a /* Public */,
+      19,    0,  206,    2, 0x0a /* Public */,
+      20,    0,  207,    2, 0x0a /* Public */,
+      21,    0,  208,    2, 0x08 /* Private */,
+      22,    0,  209,    2, 0x08 /* Private */,
+      23,    3,  210,    2, 0x08 /* Private */,
+      24,    4,  217,    2, 0x08 /* Private */,
+      25,    3,  226,    2, 0x08 /* Private */,
+      26,    0,  233,    2, 0x08 /* Private */,
+      27,    0,  234,    2, 0x08 /* Private */,
+      28,    0,  235,    2, 0x08 /* Private */,
+      29,    1,  236,    2, 0x08 /* Private */,
+      31,    0,  239,    2, 0x08 /* Private */,
+      32,    0,  240,    2, 0x08 /* Private */,
+      33,    0,  241,    2, 0x08 /* Private */,
+      34,    0,  242,    2, 0x08 /* Private */,
+      35,    0,  243,    2, 0x08 /* Private */,
+      36,    0,  244,    2, 0x08 /* Private */,
+      37,    0,  245,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -138,13 +165,23 @@ static const uint qt_meta_data_message_qemu[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::UShort,    2,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::UShort, QMetaType::QByteArray,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::UShort,    2,    2,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   26,
+    QMetaType::Void, QMetaType::Int,   30,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -171,16 +208,26 @@ void message_qemu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 12: _t->endcompare(); break;
         case 13: _t->on_readoutput(); break;
         case 14: _t->on_readerror(); break;
-        case 15: _t->on_pushButton_clicked(); break;
-        case 16: _t->on_pushButton_2_clicked(); break;
-        case 17: _t->OnConnectClientSlot((*reinterpret_cast< const int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const quint16(*)>(_a[3]))); break;
-        case 18: _t->OnReadDataSlot((*reinterpret_cast< const int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3])),(*reinterpret_cast< const QByteArray(*)>(_a[4]))); break;
-        case 19: _t->OnsockDisConnectSlot((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
-        case 20: _t->on_pushButton_6_clicked(); break;
-        case 21: _t->on_pushButton_7_clicked(); break;
-        case 22: _t->on_pushButton_8_clicked(); break;
-        case 23: _t->on_comboBox_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 24: _t->on_pushButton_4_clicked(); break;
+        case 15: _t->show_guid(); break;
+        case 16: _t->showBox(); break;
+        case 17: _t->updateProgressbar(); break;
+        case 18: _t->updateProgressbar2(); break;
+        case 19: _t->on_pushButton_clicked(); break;
+        case 20: _t->on_pushButton_2_clicked(); break;
+        case 21: _t->OnConnectClientSlot((*reinterpret_cast< const int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const quint16(*)>(_a[3]))); break;
+        case 22: _t->OnReadDataSlot((*reinterpret_cast< const int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3])),(*reinterpret_cast< const QByteArray(*)>(_a[4]))); break;
+        case 23: _t->OnsockDisConnectSlot((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2])),(*reinterpret_cast< quint16(*)>(_a[3]))); break;
+        case 24: _t->on_pushButton_6_clicked(); break;
+        case 25: _t->on_pushButton_7_clicked(); break;
+        case 26: _t->on_pushButton_8_clicked(); break;
+        case 27: _t->on_comboBox_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 28: _t->on_pushButton_4_clicked(); break;
+        case 29: _t->on_pushButton_9_clicked(); break;
+        case 30: _t->on_pushButton_10_clicked(); break;
+        case 31: _t->on_pushButton_11_clicked(); break;
+        case 32: _t->on_pushButton_12_clicked(); break;
+        case 33: _t->on_pushButton_13_clicked(); break;
+        case 34: _t->on_pushButton_14_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -231,13 +278,13 @@ int message_qemu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 25)
+        if (_id < 35)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 25;
+        _id -= 35;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 25)
+        if (_id < 35)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 25;
+        _id -= 35;
     }
     return _id;
 }

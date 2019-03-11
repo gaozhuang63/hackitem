@@ -35,7 +35,7 @@ void AnimationProgressbar::paintEvent(QPaintEvent *)
     int side = qMin(width(), height());
     QRect outRect(0, 0, side, side);
     QRect inRect(20, 20, side-40, side-40);
-    QString valueStr = QString("%1%").arg(QString::number(m_persent));
+    //QString valueStr = QString("%1%").arg(QString::number(m_persent));
 
     //画圆环
     p.drawPixmap(outRect, m_animalist.at(m_animaindex));
@@ -44,7 +44,7 @@ void AnimationProgressbar::paintEvent(QPaintEvent *)
     QFont f = QFont("Microsoft YaHei", 15, QFont::Bold);
     p.setFont(f);
     p.setPen(QColor("#555555"));
-    p.drawText(inRect, Qt::AlignCenter, valueStr);
+    //p.drawText(inRect, Qt::AlignCenter, valueStr);
 }
 
 void AnimationProgressbar::slot_valuechange(QVariant var)

@@ -9,6 +9,7 @@
 #include "title_bar.h"
 #include <QApplication>
 #include <QProcess>
+#include <QPropertyAnimation>
 
 #define TIMER_TIMEOUT   (0.08*1000)
 #define STOPTIME (0.1*1000)
@@ -68,6 +69,12 @@ login::login(QWidget *parent ) :
     ui->label->setMovie(movie);
     movie->start();
 
+
+
+
+
+
+
     Timer = new QTimer(this);
 
 
@@ -100,18 +107,8 @@ void login::paintEvent(QPaintEvent *)
 void login::on_pushButton_clicked()
 {
 
-
-
-
-
-
-
-
-
-   // message_qemu *msg_qemu = new message_qemu(this);//新建子界面
     connect(&msg_qemu,SIGNAL(send_signal()),this,SLOT(reshow()));//当点击子界面时，调用主界面的reshow()函数
     msg_qemu.show();//子界面出现
-   // msg_qemu.showFullScreen();
     QTime currTime = QTime::currentTime();
     QTime dieTime = currTime.addMSecs(STOPTIME);       //延时显示 防止闪屏
     while( QTime::currentTime() < dieTime )

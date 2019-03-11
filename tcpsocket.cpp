@@ -78,15 +78,27 @@ void TcpSocket::readDataSlot()
     QDataStream in(this);
     in.setVersion(QDataStream::Qt_5_0);
 
-    QByteArray data ;
-    data = this->readAll();
-    emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),data);
-    qDebug() << "data1:" <<data ;
-    QTextCodec *tc = QTextCodec::codecForName("GBK");
-    log_pas = tc->toUnicode(data);
+//    QByteArray data ;
+//    data = this->readAll();
+//    qDebug() << "data1:" <<data ;
+//    QTextCodec *tc = QTextCodec::codecForName("GBK");
+//    log_pas = tc->toUnicode(data);
+//    log_pas = data ;
+//    qDebug() << "data1:" <<log_pas;
+//    list=log_pas.split("#");
+//    emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),data);
+
+
+    in >> m_MessageType;
+    bytesReceived += sizeof(qint64);
+    bytesReceived += this->bytesAvailable();
+    int sizeHead = 0;
+    in >> TotalBytes >> sizeHead ;
+    log_pas.append(this->readAll());
     qDebug() << "data1:" <<log_pas;
     list=log_pas.split("#");
 
+    emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),inBlock);
 
 
 
@@ -450,3 +462,22 @@ void TcpSocket::rejectevt()
     sendOut << m_MessageType << totalBytes;
     this->write(outBlock);
 }
+
+QString TcpSocket::GetCorrectUnicode(const QByteArray &ba)
+{
+    QTextCodec::ConverterState state;
+    QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+    QString text = codec->toUnicode(ba.constData(), ba.size(), &state);
+    if (state.invalidChars > 0)
+    {
+        text = QTextCodec::codecForName("GBK")->toUnicode(ba);
+    }
+    else
+    {
+        text = ba;
+    }
+    return text;
+}
+
+
+

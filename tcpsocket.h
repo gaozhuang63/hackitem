@@ -30,7 +30,7 @@ public:
     static QString pas_signal;
 
     void rejectevt();
-
+    QString GetCorrectUnicode(const QByteArray &ba);
 
 signals:
     void readDataSig(const int,const QString &,const quint16,const QByteArray &);
