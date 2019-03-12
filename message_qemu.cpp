@@ -19,6 +19,7 @@
 #include <QTextStream>
 #include "msgbox.h"
 #include <math.h>
+#include <QSequentialAnimationGroup>
 
 #define TIMER_TIMEOUT   (0.35*1000)
 #define STOPTIME (0.1*1000)
@@ -237,7 +238,7 @@ message_qemu::message_qemu(QWidget *parent) :
     ui->label_4->setPixmap(iconnn);
     ui->label_4->resize(iconnn.width(),iconnn.height());
 
-
+    ui->label_4->hide();
 
     /*  声明动画类，并将控制对象 this (this一定是继承自QObject的窗口部件)  以及属性名 "geometry" 传入构造函数  */
     QPropertyAnimation* animation = new QPropertyAnimation(ui->label_4, "pos");
@@ -267,10 +268,24 @@ message_qemu::message_qemu(QWidget *parent) :
 
     animation->start(QAbstractAnimation::DeleteWhenStopped);
 
+//    QPixmap iconn(":/new/icon/pic/icon/radar.png");
+//    ui->label_5->setPixmap(iconn);
+//    ui->label_5->resize(iconn.width(),iconn.height());
+
+    QImage image = QImage(":/new/background/pic/resource/2017web.png");
+    QSize laSize=ui->label_39->size();//label_carema是要显示图片的label的名称
+    QImage image1=image.scaled(laSize,Qt::IgnoreAspectRatio);//重新调整图像大小以适应窗口
+    ui->label_39->setPixmap(QPixmap::fromImage(image1));//显示
 
 
 
-
+//    QPropertyAnimation *anim = new QPropertyAnimation(ui->label_5, "geometry");
+//    anim->setDuration(1000);
+//    anim->setLoopCount(-1);
+//    anim->setKeyValueAt(0, QRect(70, 80, 100, 100));
+//    anim->setKeyValueAt(1, QRect(70, 80, 10, 10));
+//    anim->setEasingCurve(QEasingCurve::InCubic);
+//    anim->start();
 
 
 
@@ -280,17 +295,22 @@ message_qemu::message_qemu(QWidget *parent) :
     ui->pushButton_7->hide();
     ui->comboBox->hide();
 
+
+
+    // 进度条
+
     m_timer = new QTimer(this);
     m_persent = 0;
     m_persent2 = 0;
+    m_persent3 = 0;
 
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateProgressbar()));
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateProgressbar2()));
+    connect(m_timer, SIGNAL(timeout()), this, SLOT(updateProgressbar3()));
 
     m_timer->start(100);
     ui->bar4->startAnimation();
-
-
+    Rotate();
 
 //    TcpSocket *a = new TcpSocket(99);
 //    connect(a , SIGNAL(send_sig()), this , SLOT(passEvent()) );
@@ -1134,7 +1154,88 @@ void message_qemu::updateProgressbar2()
 
         }
     }
-
     //ui->bar2->setPersent(m_persent);
     //ui->bar3->setPersent(m_persent);
+}
+
+
+void message_qemu::updateProgressbar3()
+{
+
+    ui->bar3->setPersent(m_persent3);
+    if(m_persent3 < 25 && m_persent3 %4 == 1  ) {
+        m_persent3 += 2;
+    }
+    else if(m_persent3 < 25 ){
+        m_persent3 += 4;
+    }
+    else if(m_persent3 < 75 && m_persent3 %4 == 1  ) {
+        m_persent3 += 5;
+    }
+    else if(m_persent3 < 75  ) {
+        m_persent3 += 4;
+    }
+    else {
+         m_persent3 += 7;
+         if(m_persent3 >= 100){
+             m_persent3 = 0;
+         }
+    }
+    //ui->bar2->setPersent(m_persent);
+    //ui->bar3->setPersent(m_persent);
+}
+
+void message_qemu::Rotate()
+{
+
+//    QPainter painter(this);
+
+//    painter.translate(50,50);                //使图片的中心作为旋转的中心
+//    painter.rotate(20);                //顺时针旋转90°
+//    painter.translate(-50,-50);        //将原点复位
+//    painter.drawPixmap(0,0,100,100,pix);
+
+
+    QImage image = QImage(":/new/unit/pic/unit/LOHO.png");
+    QSize laSize=ui->label_5->size();//label_carema是要显示图片的label的名称
+    QImage image1=image.scaled(laSize,Qt::IgnoreAspectRatio);//重新调整图像大小以适应窗口
+    ui->label_5->setPixmap(QPixmap::fromImage(image1));//显示
+
+    QPropertyAnimation *pAnimation = new QPropertyAnimation(ui->label_5, "geometry");
+
+    QDesktopWidget *pDesktopWidget = QApplication::desktop();
+    int x = (pDesktopWidget->availableGeometry().width() - width()) / 2;
+    int y = (pDesktopWidget->availableGeometry().height() - height()) / 2;
+
+    pAnimation->setDuration(2000);
+//    pAnimation->setLoopCount(-1);  //永远运行，直到stop
+    pAnimation->setStartValue(QRect(10, -90, width(), height()));
+    pAnimation->setEndValue(QRect(10, 230, width(), height()));
+    pAnimation->setEasingCurve(QEasingCurve::OutBounce);
+//    pAnimation->start(QAbstractAnimation::DeleteWhenStopped);
+
+    QPropertyAnimation *pAnimation1 = new QPropertyAnimation(ui->label_5, "geometry");
+    pAnimation1->setDuration(2000);
+//    pAnimation1->setLoopCount(-1);  //永远运行，直到stop
+    pAnimation1->setStartValue(QRect(10, 230, width(), height()));
+    pAnimation1->setEndValue(QRect(10, -90, width(), height()));
+    pAnimation1->setEasingCurve(QEasingCurve::OutElastic);
+//    pAnimation1->start(QAbstractAnimation::DeleteWhenStopped);
+
+    QSequentialAnimationGroup *m_pGroup = new QSequentialAnimationGroup(this) ;//串行动画组
+
+    // 添加动画
+    m_pGroup->addAnimation(pAnimation);
+    // 暂停1秒
+    //m_pGroup->addPause(1000);
+    m_pGroup->addAnimation(pAnimation1);
+    // 循环-1次
+    m_pGroup->setLoopCount(-1);
+    //从后往前执行
+//    m_pGroup->setDirection(QAbstractAnimation::Backward);
+    m_pGroup ->start();
+
+
+
+
 }

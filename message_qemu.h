@@ -44,6 +44,7 @@ public:
     void paintEvent(QPaintEvent *);
 
     void Recputton();
+    void Rotate();
 
     QMovie *movie;
     QMovie *movie_1;
@@ -89,6 +90,8 @@ public slots:
     void showBox();
     void updateProgressbar();
     void updateProgressbar2();
+
+    void updateProgressbar3();
 
 private slots:
     void on_pushButton_clicked();
@@ -136,6 +139,7 @@ private:
     QTimer *m_timer;
     int m_persent;
     int m_persent2;
+    int m_persent3;
 
 
     RingsMapProgressbar *m_progressbar2;

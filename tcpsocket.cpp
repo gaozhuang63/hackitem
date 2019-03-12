@@ -78,27 +78,28 @@ void TcpSocket::readDataSlot()
     QDataStream in(this);
     in.setVersion(QDataStream::Qt_5_0);
 
-//    QByteArray data ;
-//    data = this->readAll();
-//    qDebug() << "data1:" <<data ;
-//    QTextCodec *tc = QTextCodec::codecForName("GBK");
-//    log_pas = tc->toUnicode(data);
-//    log_pas = data ;
-//    qDebug() << "data1:" <<log_pas;
-//    list=log_pas.split("#");
-//    emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),data);
-
-
-    in >> m_MessageType;
-    bytesReceived += sizeof(qint64);
-    bytesReceived += this->bytesAvailable();
-    int sizeHead = 0;
-    in >> TotalBytes >> sizeHead ;
-    log_pas.append(this->readAll());
+    //.c程序运行配置
+    QByteArray data ;
+    data = this->readAll();
+    qDebug() << "data1:" <<data ;
+    QTextCodec *tc = QTextCodec::codecForName("GBK");
+    log_pas = tc->toUnicode(data);
+    log_pas = data ;
     qDebug() << "data1:" <<log_pas;
     list=log_pas.split("#");
+    emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),data);
 
-    emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),inBlock);
+
+//    //qt客户端程序运行配置
+//    in >> m_MessageType;
+//    bytesReceived += sizeof(qint64);
+//    bytesReceived += this->bytesAvailable();
+//    int sizeHead = 0;
+//    in >> TotalBytes >> sizeHead ;
+//    log_pas.append(this->readAll());
+//    qDebug() << "data1:" <<log_pas;
+//    list=log_pas.split("#");
+//    emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),inBlock);
 
 
 

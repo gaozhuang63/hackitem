@@ -26,22 +26,32 @@ void RingsProgressbar::paintEvent(QPaintEvent *)
 
     int side = qMin(width(), height());
     QRectF outRect(0, 0, side, side);
+    QRectF outRect1(0, 0, side-5, side-5);
     QRectF inRect(20, 20, side-40, side-40);
+
+
     QString valueStr = QString("%1%").arg(QString::number(m_persent));
 
     //画外圆
     p.setPen(Qt::NoPen);
     p.setBrush(QBrush(QColor(97, 117, 118)));
-    p.drawEllipse(outRect);
-    p.setBrush(QBrush(QColor(255, 107, 107)));
+    //p.drawEllipse(outRect);
+    p.setBrush(QBrush(QColor(147, 0, 0)));
     p.drawPie(outRect, (90-m_rotateAngle)*16, m_rotateAngle*16);
+
+//    //外圆遮挡1
+//    p.setPen(Qt::NoPen);
+//    p.setBrush(QBrush(QColor(147, 147, 147)));
+//    p.drawPie(outRect1, (90-m_rotateAngle)*16, m_rotateAngle*16);
+
+
     //画遮罩
     p.setBrush(palette().window().color());
-    p.drawEllipse(inRect);
+    //p.drawEllipse(inRect);
     //画文字
     QFont f = QFont("Microsoft YaHei", 15, QFont::Bold);
     p.setFont(f);
     p.setFont(f);
     p.setPen(QColor("#555555"));
-    p.drawText(inRect, Qt::AlignCenter, valueStr);
+    //p.drawText(inRect, Qt::AlignCenter, valueStr);
 }
