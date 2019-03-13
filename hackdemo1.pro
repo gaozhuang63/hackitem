@@ -6,7 +6,7 @@
 
 QT       += core gui
 QT       += core gui network
-
+RC_FILE = plm.rc
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = hackdemo1

@@ -145,8 +145,8 @@ void Widget::paintEvent(QPaintEvent *)
 void Widget::on_pushButton_clicked()
 {
 
-    if(this->ui->lineEdit->text().trimmed() == tr("") &&
-            this->ui->lineEdit_2->text().trimmed()== tr(""))  //去除lineEdit内的用户名和密码进行校验
+    if(this->ui->lineEdit->text().trimmed() == tr("plm") &&
+            this->ui->lineEdit_2->text().trimmed()== tr("plm123"))  //去除lineEdit内的用户名和密码进行校验
     {
         //登陆成功
         Dlg = new DlgWait(this);

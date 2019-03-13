@@ -1319,22 +1319,22 @@ border-radius: 5px;           /*圆角*/
                      <widget class="QLabel" name="label_39">
                       <property name="geometry">
                        <rect>
-                        <x>100</x>
-                        <y>40</y>
-                        <width>400</width>
-                        <height>300</height>
+                        <x>20</x>
+                        <y>0</y>
+                        <width>550</width>
+                        <height>370</height>
                        </rect>
                       </property>
                       <property name="minimumSize">
                        <size>
-                        <width>400</width>
-                        <height>300</height>
+                        <width>550</width>
+                        <height>370</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>400</width>
-                        <height>300</height>
+                        <width>550</width>
+                        <height>370</height>
                        </size>
                       </property>
                       <property name="styleSheet">

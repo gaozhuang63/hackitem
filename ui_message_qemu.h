@@ -769,9 +769,9 @@ public:
 "}"));
         label_39 = new QLabel(widget_35);
         label_39->setObjectName(QString::fromUtf8("label_39"));
-        label_39->setGeometry(QRect(100, 40, 400, 300));
-        label_39->setMinimumSize(QSize(400, 300));
-        label_39->setMaximumSize(QSize(400, 300));
+        label_39->setGeometry(QRect(20, 0, 550, 370));
+        label_39->setMinimumSize(QSize(550, 370));
+        label_39->setMaximumSize(QSize(550, 370));
         label_39->setStyleSheet(QString::fromUtf8(""));
         label_40 = new QLabel(widget_35);
         label_40->setObjectName(QString::fromUtf8("label_40"));

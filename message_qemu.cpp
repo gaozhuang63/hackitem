@@ -312,8 +312,12 @@ message_qemu::message_qemu(QWidget *parent) :
     ui->bar4->startAnimation();
     Rotate();
 
-//    TcpSocket *a = new TcpSocket(99);
-//    connect(a , SIGNAL(send_sig()), this , SLOT(passEvent()) );
+    //初始化config
+    for(int i =0 ; i < 15 ; i++)
+    {
+        config.append("111");
+    }
+    qDebug()<< "config111111"<<config ;
 
 
     this->setAttribute(Qt::WA_DeleteOnClose,1);     //子窗口关闭销毁
@@ -407,6 +411,8 @@ void message_qemu::OnReadDataSlot(const int,const QString &strIP, quint16, const
     qDebug() << str;
 //    qDebug() << "\n验证啊啊啊" << TcpSocket::list;
 //    qDebug () << "list:"<< TcpSocket::list [1];
+
+
     config = TcpSocket::list;
 
     QString lab;
@@ -850,29 +856,14 @@ void message_qemu::on_comboBox_currentIndexChanged(int index)
     case 0:
         ui->textBrowser_2->clear();
         break;
-
-
-
     case 1:
-
         ui->textBrowser_2->clear();
         ui->textBrowser_2->append("G1023-DSAFJK-3GALKS-XZCVB-FADGG");
-
-
         break;
-
-
-
     case 2:
-
-
         ui->textBrowser_2->clear();
         ui->textBrowser_2->append("ADF12-AG34H-BNGAS-DSAGJ-VCNNF");
-
         break;
-
-
-
 
     }
 }
@@ -913,35 +904,37 @@ void message_qemu::show_guid()
 
 void message_qemu::on_pushButton_9_clicked()
 {
-    QFile data("no.1.txt");
+//    if(no1[1] == ""){
+//        MsgBox *msgBox=new MsgBox(1,QStringLiteral("请输入卡口名或路口名"));//1为警告框
+//        int nRes=msgBox->exec();
+//        qDebug()<<"meimeimeimeimei";
+//    }
 
 
-//    QString log_pa1 = "Login#1##DESKTOP - C0GL8EJ#30:9C:23:88:24:CB#192.168.3.89#\xBF\xC9\xD3\xC3 8.68 GB / \xB9\xB2 15.95 GB#Intel(R) Core(TM) i7 - 8700K CPU @ 3.70GHz#Windows 10 (10.0) 64\xCE\xBB#C: 6.6G / 110.5G       D : 104.6G / 1863.0G       E : 103.9G / 465.8G       #(2560\xCF\xF1\xCB\xD8 x 1440\xCF\xF1\xCB\xD8) x 1\xB8\xF6\xA1\xA2(1440\xCF\xF1\xCB\xD8 x 900\xCF\xF1\xCB\xD8) x 1\xB8\xF6#\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" ;
-
-//    no1 = log_pa1.split("#");
-       if (data.open (QIODevice::Text | QIODevice::WriteOnly) )
-
-       {
-
-           QTextStream out(&data);
-
-           out << QObject::tr("No1_configure:\t")<<qSetFieldWidth(10)<<center <<no1[3]<< endl;
-           int i ;
-           for(i = 4 ; i<=10;i++)
-           {
-              out  << qSetFieldWidth(16)<<"\t"<<center <<no1[i]<< endl;
-           }
-           qDebug() <<"OK!" ;
-
-           load_sig = new Loading_Signal(this);
-           load_sig->show();
-           load_sig->move((wid_x - load_sig->width())/2,(wid_y - load_sig->height())/2);
-           connect(load_sig,SIGNAL(success_signal()),this,SLOT(showBox()),Qt::UniqueConnection);
-
-           //QMessageBox::about(NULL, "Result", "Complete!!");
-       }
-
-   data.close();
+//    else {
+        qDebug()<<"sasdfasdfsadgfadhga";
+        QFile data("no.1.txt");
+//           QString log_pa1 = "Login#1##DESKTOP - C0GL8EJ#30:9C:23:88:24:CB#192.168.3.89#\xBF\xC9\xD3\xC3 8.68 GB / \xB9\xB2 15.95 GB#Intel(R) Core(TM) i7 - 8700K CPU @ 3.70GHz#Windows 10 (10.0) 64\xCE\xBB#C: 6.6G / 110.5G       D : 104.6G / 1863.0G       E : 103.9G / 465.8G       #(2560\xCF\xF1\xCB\xD8 x 1440\xCF\xF1\xCB\xD8) x 1\xB8\xF6\xA1\xA2(1440\xCF\xF1\xCB\xD8 x 900\xCF\xF1\xCB\xD8) x 1\xB8\xF6#\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" ;
+//           no1 = log_pa1.split("#");
+//           qDebug()<<"sasdfasdfsadgfadhga"<<no1;
+        if (data.open (QIODevice::Text | QIODevice::WriteOnly) )
+        {
+            QTextStream out(&data);
+            out << QObject::tr("No1_configure:\t")<<qSetFieldWidth(10)<<center <<no1[3]<< endl;
+            int i ;
+            for(i = 4 ; i<=10;i++)
+            {
+                out  << qSetFieldWidth(16)<<"\t"<<center <<no1[i]<< endl;
+            }
+            qDebug() <<"OK!" ;
+            load_sig = new Loading_Signal(this);
+            load_sig->show();
+            load_sig->move((wid_x - load_sig->width())/2,(wid_y - load_sig->height())/2);
+            connect(load_sig,SIGNAL(success_signal()),this,SLOT(showBox()),Qt::UniqueConnection);
+            //QMessageBox::about(NULL, "Result", "Complete!!");
+        }
+        data.close();
+//    }
 }
 
 void message_qemu::on_pushButton_10_clicked()

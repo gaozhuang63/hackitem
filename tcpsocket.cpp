@@ -39,7 +39,6 @@ TcpSocket::TcpSocket(qintptr socketDescriptor, QObject *parent) : //构造函数
 
 
 
-
     qDebug() << "new connect" ;
 }
 
@@ -73,7 +72,12 @@ void TcpSocket::disConTcpSlot(int i)
 void TcpSocket::readDataSlot()
 {
     list.clear();                          //初始化信息列表;
+//    for(int i =0 ; i < 14 ; i++)
+//    {
 
+//        list.append("111");
+//    }
+//    qDebug() << "list初始化 ："<<list;
 
     QDataStream in(this);
     in.setVersion(QDataStream::Qt_5_0);
@@ -82,9 +86,12 @@ void TcpSocket::readDataSlot()
     QByteArray data ;
     data = this->readAll();
     qDebug() << "data1:" <<data ;
-    QTextCodec *tc = QTextCodec::codecForName("GBK");
-    log_pas = tc->toUnicode(data);
-    log_pas = data ;
+//    QTextCodec *tc = QTextCodec::codecForName("GBK");
+//    log_pas = tc->toUnicode(data);
+//    log_pas = data ;
+    log_pas =GetCorrectUnicode(data);
+
+
     qDebug() << "data1:" <<log_pas;
     list=log_pas.split("#");
     emit readDataSig(socketID,this->peerAddress().toString(),this->peerPort(),data);
